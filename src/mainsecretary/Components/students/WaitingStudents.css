@@ -1,0 +1,92 @@
+/* ─────────────────────────────────────────────────────────────
+   WaitingStudents additions — all classes prefixed ws- so they
+   never collide with existing pf- classes in WaitingStudents.css
+───────────────────────────────────────────────────────────── */
+
+/* Inner scroll wrapper — sits INSIDE pf-table-card so it is
+   never blocked by overflow:hidden on the card itself */
+.ws-table-scroll {
+  overflow-x: auto;
+  width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.ws-table-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.ws-table-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ws-table-scroll::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 9999px;
+}
+
+/* Make the table never shrink below its natural width so
+   the scrollbar actually appears when the viewport is narrow */
+.ws-table-scroll .pf-table {
+  min-width: 1000px;
+}
+
+/* Validation cell — delete + validate icons side by side */
+.ws-validation-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ws-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+/* Delete — red */
+.ws-action-delete {
+  color: #ef4444;
+}
+
+.ws-action-delete:hover {
+  background-color: #fee2e2;
+}
+
+/* Validate — green */
+.ws-action-validate {
+  color: #22c55e;
+}
+
+.ws-action-validate:hover {
+  background-color: #dcfce7;
+}
+
+.ws-action-validate:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  background: none;
+}
+.pf-badge-green{
+background-color: oklch(92.5% .084 155.995);
+color: oklch(44.8% .119 151.328);
+}
+.pf-badge-red{
+background-color: oklch(93.6% .032 17.717);
+color: #9f0712;
+}
+.pf-badge-yellow{
+    display: flex;
+    justify-content: flex-start;
+    color: oklch(47.6% .114 61.907);
+    background-color: oklch(97.3% .071 103.193);
+    border: 1px solid oklch(97.3% .071 103.193);
+}
+
+/* oklch(95.4% .038 75.164) */

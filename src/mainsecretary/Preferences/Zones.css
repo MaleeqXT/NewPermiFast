@@ -1,0 +1,819 @@
+/* ══ Shared Zone styles ═══════════════════════════════════════════════════════ */
+
+.zones-page {
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  max-width: 100%;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.zones-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.zones-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.zones-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+.zones-back-btn:hover { background: #f3f4f6; }
+.zones-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+.zones-btn-new {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0 18px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.zones-btn-new:hover { background: #444; }
+
+/* ── Outline buttons ── */
+.zones-btn-outline {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 14px;
+  height: 38px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.zones-btn-outline:hover { background: #f5f5f5; }
+
+/* ── Tabs row ── */
+.zones-tabs-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.zones-tabs-pill {
+  display: flex;
+  gap: 2px;
+  background: #333;
+  border-radius: 999px;
+  padding: 4px;
+  align-items: center;
+}
+.zones-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  background: none;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.zones-tab.active {
+  background: #fff;
+  color: #111827;
+  font-weight: 700;
+}
+.zones-tab-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  padding: 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  background: rgba(255,255,255,0.15);
+  color: #d1d5db;
+}
+.zones-tab.active .zones-tab-count {
+  background: #111827;
+  color: #fff;
+}
+.zones-tabs-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+.zones-search-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0 12px;
+  height: 38px;
+  background: #fff;
+  min-width: 160px;
+}
+.zones-search-box svg { color: #9ca3af; flex-shrink: 0; }
+.zones-search-box input {
+  border: none; outline: none;
+  font-size: 13px; width: 100%;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  color: #374151;
+}
+
+/* ── Icon-only toolbar buttons (search/filter/sort icons from screenshot) ── */
+.zones-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.zones-icon-btn:hover { background: #f3f4f6; color: #111827; }
+
+/* ── Table card ── */
+.zones-table-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.zones-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.zones-table thead tr { border-bottom: 1px solid #e5e7eb; }
+.zones-table th {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #374151;
+  padding: 12px 16px;
+  text-align: left;
+  white-space: nowrap;
+  background: #f9fafb;
+}
+.zones-table td {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  padding: 14px 16px;
+  color: #111827;
+  border-top: 1px solid #f3f4f6;
+  vertical-align: middle;
+}
+.zones-table tbody tr { transition: background 0.12s; }
+.zones-table tbody tr:hover { background: #fafafa; }
+.zones-table tbody tr.zones-row--selected { background: #f0f9ff; border-left: 3px solid #16a34a; }
+
+/* ── Zone / place name ── */
+.zones-name-link {
+  color: #2563eb;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+}
+.zones-name-link:hover { text-decoration: underline; }
+
+/* Zone name (not a link, just text) */
+.zones-name-text {
+  color: #111827;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Map link */
+.zones-map-link {
+  color: #2563eb;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+.zones-map-link:hover { text-decoration: underline; }
+
+/* ── iOS Toggle (green track + dark thumb) ── */
+.zones-toggle {
+  position: relative;
+  width: 51px; height: 31px;
+  cursor: pointer;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.zones-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+.zones-toggle-track {
+  position: absolute; inset: 0;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: background 0.22s;
+}
+.zones-toggle input:checked + .zones-toggle-track { background: #333; }
+.zones-toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 27px; height: 27px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.28);
+  transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1);
+  pointer-events: none;
+}
+.zones-toggle input:checked ~ .zones-toggle-thumb { transform: translateX(20px); }
+
+/* ── Read-only toggle (no pointer, just display) ── */
+.zones-toggle--readonly { cursor: default; pointer-events: none; }
+
+/* ── Actions cell ── */
+.zones-actions-cell { text-align: right; }
+
+/* ── 3-dot row menu ── */
+.zones-row-menu-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+.zones-row-menu-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.zones-row-menu-trigger:hover { background: #f3f4f6; color: #111827; }
+.zones-row-menu-dropdown {
+  position: absolute;
+  top: 36px; right: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 200;
+  min-width: 175px;
+  padding: 6px;
+}
+.zones-row-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  padding: 9px 12px;
+  border: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 8px;
+  text-align: left;
+  transition: background 0.1s;
+}
+.zones-row-menu-item:hover { background: #f3f4f6; }
+.zones-row-menu-item--danger { color: #dc2626; }
+.zones-row-menu-item--danger:hover { background: #fef2f2; }
+.zones-row-menu-divider {
+  border: none;
+  border-top: 1px solid #f3f4f6;
+  margin: 4px 0;
+}
+
+/* ── Pagination ── */
+.zones-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  border-top: 1px solid #f3f4f6;
+  background: #fff;
+}
+.zones-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.zones-page-btn:hover:not(:disabled) { background: #f3f4f6; }
+.zones-page-btn:disabled { color: #d1d5db; cursor: not-allowed; }
+.zones-page-info {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+/* ── Empty ── */
+.zones-empty {
+  text-align: center;
+  padding: 2.5rem;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ── Toast ── */
+.zones-toast-inline {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  animation: zonesSlideDown 0.3s ease;
+}
+@keyframes zonesSlideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.zones-toast-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+.zones-toast-top-close {
+  margin-left: auto;
+  background: none; border: none;
+  color: #fff; cursor: pointer;
+  font-size: 16px; line-height: 1; padding: 0;
+}
+.zones-toast-bottom {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}
+
+/* ── Delete / Confirm Modal ── */
+.zones-modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zones-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 380px; max-width: 95vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+.zones-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.zones-modal-title {
+  font-size: 16px; font-weight: 700;
+  color: #111827; font-family: 'Inter', sans-serif;
+}
+.zones-modal-x {
+  background: none; border: none;
+  cursor: pointer; color: #6b7280; font-size: 18px;
+}
+.zones-modal-body { padding: 32px 22px; text-align: center; }
+.zones-modal-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 22px;
+  background: #f9fafb;
+  border-top: 1px solid #f3f4f6;
+}
+.zones-modal-btn {
+  padding: 10px 28px;
+  border-radius: 8px;
+  font-size: 14px; font-weight: 600;
+  cursor: pointer; font-family: 'Inter', sans-serif;
+}
+.zones-modal-btn--cancel { border: 1px solid #e5e7eb; background: #fff; color: #374151; }
+.zones-modal-btn--delete { border: none; background: #ef4444; color: #fff; }
+
+/* ── Drawer ── */
+.zones-drawer-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 400;
+}
+.zones-drawer {
+  position: fixed;
+  top: 0; right: 0;
+  height: 100%; width: 420px; max-width: 95vw;
+  background: #fff;
+  z-index: 401;
+  display: flex; flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0,0,0,0.15);
+  animation: zonesDrawerIn 0.25s ease;
+}
+@keyframes zonesDrawerIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.zones-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.zones-drawer-close {
+  background: none; border: none;
+  cursor: pointer; color: #4a9eff;
+  font-size: 15px; font-weight: 600;
+  font-family: 'Inter', sans-serif; padding: 0;
+}
+.zones-drawer-title {
+  font-size: 16px; font-weight: 700;
+  color: #111827; font-family: 'Inter', sans-serif;
+  text-align: center; flex: 1; margin: 0 12px;
+}
+.zones-drawer-body {
+  flex: 1; overflow-y: auto;
+  padding: 24px 22px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+/* ── Toggle row ── */
+.zones-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.zones-toggle-label {
+  font-size: 15px; font-weight: 500;
+  color: #111827; font-family: 'Inter', sans-serif;
+}
+
+/* ── Form fields ── */
+.zones-form-group { display: flex; flex-direction: column; gap: 6px; }
+.zones-form-group label {
+  font-size: 14px; font-weight: 500;
+  color: #374151; font-family: 'Inter', sans-serif;
+}
+.zones-form-group label span { color: #ef4444; margin-left: 2px; }
+.zones-input {
+  height: 44px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #111827; outline: none;
+  transition: border-color 0.15s;
+  background: #fff;
+  width: 100%; box-sizing: border-box;
+}
+.zones-input:focus { border-color: #4a9eff; }
+
+/* ── Drawer Footer ── */
+.zones-drawer-footer {
+  padding: 16px 22px;
+  display: flex; gap: 10px;
+  border-top: 1px solid #f3f4f6;
+  background: #f9fafb;
+}
+.zones-drawer-cancel-btn {
+  flex: 1; height: 48px;
+  background: #fff; color: #374151;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer; font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.zones-drawer-cancel-btn:hover { background: #f3f4f6; }
+.zones-drawer-save-btn {
+  flex: 2; height: 48px;
+  color: #fff; border: none;
+  border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.zones-drawer-save-btn--add  { background: #333; }
+.zones-drawer-save-btn--add:hover  { background: #444; }
+.zones-drawer-save-btn--edit { background: #333; }
+.zones-drawer-save-btn--edit:hover { background: #333; }
+.zones-drawer-save-btn:disabled { background: #d1d5db; cursor: not-allowed; }
+
+/* ── Sort arrows ── */
+.zones-sort-btn {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+  background: none; border: none;
+  padding: 0 0 0 4px;
+  cursor: pointer; vertical-align: middle; line-height: 1;
+}
+/* ══════════════════════════════════════════════════════════════
+   Zones.css — Responsive additions
+   Append these rules to the bottom of your existing Zones.css
+══════════════════════════════════════════════════════════════ */
+
+/* ── Cards hidden by default (desktop shows table only) ── */
+.zones-card-list {
+  display: none;
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .zones-tabs-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .zones-tabs-right {
+    margin-left: 0;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .zones-search-box {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  .zones-table th,
+  .zones-table td {
+    font-size: 13px;
+    padding: 11px 12px;
+  }
+}
+
+/* ══════════════════════════════════════════
+   Mobile (≤ 768px) — switch to card layout
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  .zones-page {
+    padding: 16px 14px;
+  }
+
+  /* ── Header: stack vertically ── */
+  .zones-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .zones-btn-new {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* ── Tabs: scrollable pill row ── */
+  .zones-tabs-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .zones-tabs-pill {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100%;
+  }
+  .zones-tabs-pill::-webkit-scrollbar { display: none; }
+
+  .zones-tab {
+    flex-shrink: 0;
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  /* ── Toolbar right: full-width row ── */
+  .zones-tabs-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .zones-search-box {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .zones-btn-outline {
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  /* ── Hide desktop table, show cards ── */
+  .zones-table-card > div > .zones-table {
+    display: none;
+  }
+
+  .zones-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  /* ── Individual zone card ── */
+  .zones-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  /* Top row: name + toggle + menu */
+  .zones-card-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .zones-card-name {
+    flex: 1;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2563eb;
+    font-family: 'Inter', sans-serif;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+  }
+  .zones-card-name:hover { text-decoration: underline; }
+
+  /* Meta row: created date */
+  .zones-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .zones-card-meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .zones-card-meta-value {
+    font-size: 13px;
+    color: #6b7280;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Actions row: quick-action buttons */
+  .zones-card-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .zones-card-action-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 0;
+    height: 36px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #fff;
+    color: #374151;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: background 0.12s;
+    white-space: nowrap;
+  }
+  .zones-card-action-btn:hover { background: #f3f4f6; }
+  .zones-card-action-btn--danger {
+    color: #dc2626;
+    border-color: #fca5a5;
+  }
+  .zones-card-action-btn--danger:hover { background: #fef2f2; }
+
+  /* ── Drawer slides up from bottom on mobile ── */
+  .zones-drawer {
+    width: 100%;
+    max-width: 100%;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+    border-radius: 16px 16px 0 0;
+    top: auto;
+    bottom: 0;
+    height: 92dvh;
+    animation: zonesDrawerUpMobile 0.25s ease;
+  }
+
+  @keyframes zonesDrawerUpMobile {
+    from { transform: translateY(100%); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+  }
+
+  /* ── Modal full-width on mobile ── */
+  .zones-modal {
+    width: 92vw;
+  }
+}
+
+/* ── Very small (≤ 380px) ── */
+@media (max-width: 380px) {
+  .zones-tabs-right {
+    flex-direction: column;
+  }
+
+  .zones-btn-outline {
+    width: 100%;
+  }
+
+  .zones-card-actions {
+    flex-direction: column;
+  }
+
+  .zones-card-action-btn {
+    width: 100%;
+  }
+}

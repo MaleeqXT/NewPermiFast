@@ -1,0 +1,556 @@
+.ms-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.ms-topbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #333 0%, #0d232a 100%);
+  color: #fff;
+  box-shadow: 0 18px 40px rgba(6, 35, 44, 0.24);
+}
+
+.ms-topbar-copy {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ms-topbar-copy h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.ms-topbar-copy p {
+  margin: 6px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ms-topbar-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ms-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ms-icon-btn,
+.ms-nav-btn,
+.ms-calendar-trigger,
+.ms-calendar-popover-btn {
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
+}
+
+.ms-icon-btn,
+.ms-nav-btn,
+.ms-calendar-popover-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ms-icon-btn:hover,
+.ms-nav-btn:hover,
+.ms-calendar-trigger:hover,
+.ms-calendar-popover-btn:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.ms-calendar-trigger {
+  min-width: 190px;
+  height: 42px;
+  padding: 0 14px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ms-calendar-popover {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: 0;
+  width: min(100%, 480px);
+  padding: 18px;
+  border-radius: 24px;
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.18);
+  z-index: 5;
+}
+
+.ms-calendar-popover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ms-calendar-popover-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.ms-calendar-popover-title strong {
+  font-size: 20px;
+}
+
+.ms-calendar-popover-title span {
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ms-calendar-popover-btn {
+  border-color: #e5e7eb;
+  background: #f8fafc;
+  color: #111827;
+}
+
+.ms-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.ms-calendar-weekday {
+  padding: 8px 0;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ms-calendar-day {
+  min-height: 52px;
+  border: 1px solid #eef2f7;
+  border-radius: 14px;
+  background: #fff;
+  color: #111827;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ms-calendar-day--muted {
+  color: #c0c6d3;
+}
+
+.ms-calendar-day--selected {
+  background: rgba(51, 51, 51, 0.1);
+  border-color: rgba(51, 51, 51, 0.2);
+}
+
+.ms-calendar-day--selected-edge {
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+
+.ms-calendar-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08);
+}
+
+.ms-calendar-card .cal-week-wrap,
+.ms-calendar-card .cal-week-nav-row,
+.ms-calendar-card .cal-week-header,
+.ms-calendar-card .cal-week-body,
+.ms-calendar-card .cal-week-day-head--today,
+.ms-calendar-card .cal-week-cell--today {
+  background: transparent;
+}
+
+.ms-calendar-card .cal-week-nav-row {
+  padding: 18px 20px 14px;
+  border-bottom-color: #e8edf3;
+}
+
+.ms-calendar-card .cal-week-nav-current {
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ms-calendar-card .cal-week-nav-btn {
+  min-width: 170px;
+  border-radius: 14px;
+}
+
+.ms-calendar-card .cal-week-header,
+.ms-calendar-card .cal-week-row {
+  grid-template-columns: 74px repeat(7, 1fr);
+}
+
+.ms-calendar-card .cal-week-time-label {
+  padding-top: 16px;
+}
+
+.ms-calendar-card .cal-week-cell {
+  min-height: 124px;
+  padding: 8px 6px;
+  --cell-padding: 8px;
+  --cell-padding-x: 6px;
+}
+
+.ms-calendar-slot {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+}
+
+.ms-calendar-card .cal-week-cell.cal-week-cell--selected {
+  background: linear-gradient(180deg, #eef6ff 0%, #f8fbff 100%);
+  box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.26);
+}
+
+.ms-calendar-card .cal-week-cell:hover {
+  background: #f8fbfe;
+}
+
+.ms-calendar-card .cal-week-hover-time {
+  top: 10px;
+  background: #eff3f7;
+}
+
+.ms-event-card {
+  min-height: 100%;
+  height: 100%;
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 5px solid var(--ms-event-accent);
+  border-radius: 14px;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(3, 7, 18, 0.08);
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ms-event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(3, 7, 18, 0.16);
+}
+
+.ms-event-card--availability {
+  color: #15803d;
+  border: 1px dashed rgba(34, 197, 94, 0.5);
+  border-left: 5px solid #22c55e;
+  box-shadow: none;
+}
+
+.ms-event-card--offer {
+  border-left: 5px solid #ec4899;
+}
+
+.ms-event-card--selected {
+  border: 2px solid #2563eb;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.2);
+}
+
+.ms-event-head {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.ms-event-card--availability .ms-event-head {
+  border-bottom-color: rgba(34, 197, 94, 0.18);
+}
+
+.ms-event-card--selected .ms-event-head {
+  border-bottom-color: rgba(37, 99, 235, 0.18);
+}
+
+.ms-event-status {
+  display: block;
+  color: var(--ms-event-accent);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ms-event-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ms-event-body strong {
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.ms-event-body span {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.ms-event-offer-copy {
+  color: inherit;
+  font-weight: 600;
+}
+
+.ms-event-pill {
+  align-self: flex-start;
+  padding: 5px 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ms-slot-actions {
+  position: fixed;
+  left: 60%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: min(760px, calc(100vw - 32px));
+  z-index: 1200;
+  margin: 0;
+  padding: 10px;
+  border-radius: 22px;
+  background: rgba(3, 7, 18, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.ms-slot-selected-indicator {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  pointer-events: none;
+}
+
+.ms-slot-actions-copy span {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ms-slot-actions-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.ms-danger-btn,
+.ms-success-btn,
+.ms-secondary-btn {
+  font-family: "Inter",sans-serif;
+  min-height: 42px;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ms-danger-btn {
+  border: 1px solid #ef4444;
+  /* background: linear-gradient(180deg, #fb7185 0%, #ef4444 100%); */
+  background-color: red;
+  color: #fff;
+}
+
+.ms-success-btn {
+  border: 1px solid rgb(158, 130, 58);
+  /* background: linear-gradient(90deg, #7cc44d 0%, #22c55e 100%); */
+  background-color: rgb(158, 130, 58);
+  color: #fff;
+  min-width: 240px;
+}
+
+.ms-secondary-btn {
+  width: 100%;
+  border: 1px solid #d9dde5;
+  background: #f8fafc;
+  color: #1f2937;
+}
+
+.ms-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(6, 35, 44, 0.44);
+}
+
+.ms-success-modal {
+  width: min(440px, 100%);
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 26px 80px rgba(15, 23, 42, 0.28);
+}
+
+.ms-success-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  background: #333;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ms-success-body {
+  padding: 18px 20px;
+}
+
+.ms-success-body p {
+  margin: 0;
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.ms-success-actions {
+  padding: 0 20px 20px;
+}
+
+@media (max-width: 1024px) {
+  .ms-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ms-topbar-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .ms-calendar-trigger {
+    flex: 1;
+  }
+
+  .ms-slot-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ms-slot-actions-buttons {
+    justify-content: stretch;
+  }
+
+  .ms-danger-btn,
+  .ms-success-btn {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .ms-topbar {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .ms-topbar-copy h2 {
+    font-size: 24px;
+  }
+
+  .ms-calendar-card .cal-week-cell {
+    min-height: 104px;
+  }
+
+  .ms-event-card {
+    min-height: 94px;
+  }
+}
+
+/* ── Candidate row inside proposal/offer event card ── */
+.ms-event-candidate-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ms-event-candidate-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.ms-event-candidate-avatar-fallback {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ms-event-candidate-name {
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.9;
+}

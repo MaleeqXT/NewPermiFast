@@ -1,0 +1,46 @@
+/* Administrators.css
+   All layout/table/tabs/avatar/toolbar styles come from Candidates.css (cand-* classes).
+   This file only adds what is unique to Administrators. */
+
+/* ── Green "+ New admin" button ── */
+.adm-btn-create {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0 20px;
+  height: 44px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.adm-btn-create:hover {
+  background: rgb(14, 14, 4);
+}
+
+/* ── Status badge ── */
+.adm-status-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+.adm-status-active {
+  background-color: rgb(220, 252, 231);
+  color: rgb(22, 101, 52);
+}
+
+.adm-status-archived {
+  background: #e5e7eb;
+  color: #6b7280;
+}

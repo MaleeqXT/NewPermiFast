@@ -1,0 +1,163 @@
+/* ── Page wrapper ── */
+.add-school-page {
+  max-width: 900px;
+
+}
+
+.add-school-page-title {
+  font-family: "Inter",sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.add-school-page-subtitle {
+  color: oklch(0.551 0.027 264.364);
+  font-weight: 400;
+  font-family: 'Inter',sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 32px;
+}
+
+/* ── White card that wraps the form ── */
+.add-school-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  padding: 36px 40px 40px;
+}
+
+/* ── Two-column grid — each row has a left field and a right field ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 32px;              /* no vertical gap — each field manages its own bottom space */
+}
+
+/* ── One field (label + input + error) ── */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;      /* space between rows */
+}
+
+/* Label */
+.form-label {
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: oklch(0.373 0.034 259.733); 
+  margin-bottom: 8px;
+}
+
+/* The * required star */
+.form-label .required-star {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+/* Input box — default state */
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 0.1px solid #cfd2d4;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  font-size: 0.95rem;
+  color: var(--text);
+  background: #fff;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+/* Input focused — blue ring */
+.form-input:focus {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+/* Input with an error — red border */
+.form-input.error {
+  border-color: #ef4444;
+  box-shadow: none;
+}
+
+/* Input with an error AND focused — red ring */
+.form-input.error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+/* Error message text below the input */
+.form-error {
+  font-size: 0.82rem;
+  color: #ef4444;
+  margin-top: 6px;
+  min-height: 18px;         /* reserves space so layout doesn't jump */
+  line-height: 1.4;
+}
+
+/* ── Required fields note ── */
+.form-required-note {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+  margin-top: -8px;
+}
+
+.submit-btns{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ── Submit button — full width, dark ── */
+.form-submit-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--text);
+  color: white;
+  background-color: #333333;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+  letter-spacing: 0.01em;
+}
+.form-submit-btn1{
+  width: 100%;
+  background-color: transparent;
+  color: #364153;
+  border: 1px solid #d1d5dc;
+  padding: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: 'Inter',sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+
+
+}
+.form-submit-btn1:hover{
+background-color: #f7f7f8;
+transition: all .5s ease;
+}
+
+.form-submit-btn:hover {
+  opacity: 0.88;
+}
+
+/* Disabled state when form has errors */
+.form-submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}

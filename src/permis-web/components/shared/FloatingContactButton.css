@@ -1,0 +1,204 @@
+/* =========================================================
+   FLOATING CONTACT BUTTONS
+   Independent fixed overlay; no page layout participation.
+========================================================= */
+
+.fcb {
+  position: fixed;
+  top: 80%;
+  right: 14px;
+  z-index: 950;
+  transform: translateY(-50%);
+}
+
+.fcb__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fcb__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-height: 48px;
+  height: 48px;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  box-shadow:
+    0 8px 22px rgba(20, 35, 25, 0.18),
+    0 2px 6px rgba(20, 35, 25, 0.1);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    filter 0.22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fcb__action--phone {
+  background: #35b629;
+}
+
+.fcb__action--whatsapp {
+  background: #25d366;
+}
+
+.fcb__action--contact {
+  background: #2497e3;
+}
+
+.fcb__action:active {
+  transform: translateX(-2px) scale(0.94);
+  background: #69b32a;
+}
+
+.fcb__action:focus-visible {
+  outline: 3px solid rgba(105, 179, 42, 0.4);
+  outline-offset: 3px;
+}
+
+.fcb__label {
+  display: none;
+  font-family: "Poppins", sans-serif;
+}
+
+.fcb__icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  color: #ffffff;
+}
+
+.fcb__icon {
+  font-size: 22px;
+  stroke-width: 2.25;
+}
+
+@media (hover: hover) {
+  .fcb__action:hover {
+    transform: translateX(-4px);
+    filter: brightness(1.04);
+    box-shadow:
+      0 12px 28px rgba(20, 35, 25, 0.22),
+      0 3px 8px rgba(20, 35, 25, 0.12);
+  }
+}
+
+/* =========================================================
+   MOBILE — three-segment bottom action bar
+========================================================= */
+@media (max-width: 640px) {
+  .fcb {
+    top: auto;
+    right: auto;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    width: min(calc(100% - 24px), 440px);
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid rgba(32, 40, 50, 0.08);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow:
+      0 18px 42px rgba(15, 23, 42, 0.2),
+      0 4px 12px rgba(15, 23, 42, 0.08),
+      inset 0 1px 0 #ffffff;
+    transform: translateX(-50%);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .fcb__actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  .fcb__action,
+  .fcb__action--phone,
+  .fcb__action--whatsapp,
+  .fcb__action--contact {
+    position: relative;
+    width: auto;
+    min-width: 0;
+    min-height: 68px;
+    height: 68px;
+    flex-direction: column;
+    gap: 4px;
+    padding: 7px 5px;
+    border-radius: 19px;
+    background: transparent;
+    box-shadow: none;
+    color: #111827;
+  }
+
+  .fcb__action:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    bottom: 11px;
+    left: 0;
+    width: 1px;
+    background: #e5e7eb;
+  }
+
+  .fcb__action:active {
+    color: #ffffff;
+    background: #69b32a;
+    transform: scale(0.97);
+    box-shadow:
+      0 7px 18px rgba(105, 179, 42, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  .fcb__action:active::before,
+  .fcb__action:active + .fcb__action::before {
+    opacity: 0;
+  }
+
+  .fcb__label {
+    display: block;
+    order: 2;
+    overflow: hidden;
+    max-width: 100%;
+    font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.15;
+    color: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fcb .fcb__icon-wrap {
+    order: 1;
+    width: 27px;
+    height: 27px;
+    background: transparent;
+    color: #58ad22;
+  }
+
+  .fcb__action:active .fcb__icon-wrap {
+    color: #ffffff;
+  }
+
+  .fcb__icon {
+    font-size: 24px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  .fcb__action {
+    transition: none;
+  }
+}

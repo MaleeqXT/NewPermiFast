@@ -1,0 +1,307 @@
+/* ── ProposedSessionsList — white / #333 design, matches CandidatesPage ─────── */
+
+.psl-page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Inter', 'Sora', 'Segoe UI', sans-serif;
+  color: #333333;
+  overflow-x: hidden;
+}
+
+/* ── Header ── */
+.psl-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid #ebebeb;
+  position: sticky;
+  top: 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  z-index: 20;
+}
+
+/* Back button — identical to cndp__back */
+.psl-back {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #ebebeb;
+  background: #f6f6f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #999999;
+  transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.12s;
+}
+.psl-back:hover {
+  background: #333333;
+  border-color: #333333;
+  color: #ffffff;
+}
+.psl-back:active { transform: scale(0.95); }
+
+.psl-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ── Search — identical to cndp__search-wrap ── */
+.psl-search-wrap {
+  position: relative;
+  margin: 20px 24px 0;
+}
+
+.psl-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #cccccc;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.psl-search {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  padding: 0 40px 0 42px;
+  font-family: inherit;
+  font-size: 13px;
+  color: #333333;
+  background: #f6f6f6;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+.psl-search:focus {
+  border-color: #bbbbbb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(51,51,51,0.06);
+}
+.psl-search::placeholder { color: #cccccc; }
+
+.psl-clear {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: #cccccc;
+  padding: 4px;
+  transition: color 0.15s;
+}
+.psl-clear:hover { color: #333333; }
+
+/* ── Count ── */
+.psl-count {
+  padding: 12px 24px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #cccccc;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Timeline container ── */
+.psl-timeline {
+  padding: 12px 24px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.psl-empty {
+  padding: 40px 0;
+  text-align: center;
+  font-size: 13px;
+  color: #cccccc;
+  font-style: italic;
+}
+
+/* ── Date group ── */
+.psl-date-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 24px;
+}
+
+/* Date row — circle dot + label */
+.psl-date-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.psl-date-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #d1d5db;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.psl-date-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #333333;
+  letter-spacing: -0.01em;
+}
+
+/* ── Entry (clock icon + card) ── */
+.psl-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+/* Left column: vertical line + clock icon */
+.psl-entry-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  padding-top: 2px;
+}
+
+.psl-entry-line {
+  width: 1.5px;
+  flex: 1;
+  min-height: 10px;
+  background: #e5e7eb;
+}
+
+.psl-entry-line--bottom {
+  min-height: 10px;
+}
+
+.psl-entry-clock {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9ca3af;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+/* ── Card ── */
+.psl-entry-card {
+  flex: 1;
+  min-width: 0;
+}
+
+.psl-proposal-card {
+  width: 100%;
+  display: block;
+  background: #ffffff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  transition: box-shadow 0.15s, transform 0.12s;
+}
+.psl-proposal-card:hover {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+/* Status pill at top of card */
+.psl-status-pill {
+  padding: 7px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* Card body */
+.psl-card-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 14px;
+}
+
+/* Avatar — blue tint like screenshot */
+.psl-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #dbeafe;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+
+.psl-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.psl-card-desc {
+  font-size: 12px;
+  color: #9ca3af;
+  font-family: inherit;
+}
+
+.psl-card-main {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.45;
+  font-family: inherit;
+}
+.psl-card-main strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.psl-card-meta {
+  font-size: 11px;
+  color: #9ca3af;
+  font-family: inherit;
+  margin-top: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .psl-header   { padding: 16px; }
+  .psl-search-wrap { margin: 16px 16px 0; }
+  .psl-count    { padding: 10px 16px 2px; }
+  .psl-timeline { padding: 12px 16px 32px; }
+}

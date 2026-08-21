@@ -1,0 +1,326 @@
+.inv-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* ── Dark pill tabs — exactly like screenshot 2 ── */
+.inv-pill-tabs {
+    width: fit-content;
+  display: inline-flex;
+  background: #333;
+  border-radius: 50px;
+  padding: 5px;
+  gap: 2px;
+}
+
+.inv-pill-tab {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  color: rgba(255,255,255,0.5);
+  font-family: inherit;
+  transition: background 0.18s, color 0.18s;
+}
+
+.inv-pill-tab:hover {
+  /* color: rgba(255,255,255,0.85); */
+}
+
+.inv-pill-tab--active {
+  background: #ffffff;
+  color: #111827;
+  font-weight: 700;
+}
+
+/* ── White card ── */
+.inv-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+/* ── Date filter row ── */
+.inv-date-row {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.inv-filter-anchor {
+  position: relative;
+  display: inline-block;
+}
+
+.inv-date-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: 1.5px dashed #d1d5db;
+  border-radius: 10px;
+  padding: 9px 14px;
+  background: #fafafa;
+  cursor: pointer;
+  min-width: 220px;
+  color: #111827;
+  font: inherit;
+  transition: border-color 0.15s;
+}
+.inv-filter-trigger {
+  justify-content: space-between;
+  min-width: 280px;
+}
+.inv-date-wrap:focus-within {
+  border-color: #9ca3af;
+  background: #fff;
+}
+
+.inv-date-icon { color: #9ca3af; display: flex; align-items: center; flex-shrink: 0; }
+
+.inv-date-placeholder {
+  font-size: 13px;
+  color: #9ca3af;
+  pointer-events: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inv-date-placeholder--active {
+  color: #111827;
+  font-weight: 600;
+}
+
+.inv-filter-caret {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.inv-filter-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  z-index: 10;
+  width: min(360px, 92vw);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  padding: 16px;
+}
+
+.inv-filter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.inv-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inv-filter-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.inv-filter-input {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 12px;
+  font: inherit;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.inv-filter-input:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.inv-filter-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.inv-filter-secondary,
+.inv-filter-primary {
+  border: none;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.inv-filter-secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.inv-filter-primary {
+  background: #111827;
+  color: #ffffff;
+}
+
+.inv-filter-secondary:hover,
+.inv-filter-primary:hover {
+  transform: translateY(-1px);
+}
+
+/* ── Table ── */
+.inv-table-wrap { overflow-x: auto; }
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.inv-table thead tr {
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.inv-table th {
+  padding: 11px 20px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.inv-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.1s;
+}
+.inv-table tbody tr:last-child { border-bottom: none; }
+.inv-table tbody tr:hover { background: #f9fafb; }
+
+.inv-table td {
+  padding: 14px 20px;
+  color: #111827;
+}
+
+.inv-cell-month  { font-weight: 700; }
+.inv-cell-number { color: #16a34a; font-weight: 600; }
+.inv-muted       { color: #9ca3af; }
+.inv-empty       { text-align: center; color: #9ca3af; padding: 40px; }
+
+/* ── Pagination ── */
+.inv-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px 20px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.inv-page-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+.inv-page-btn:hover:not(:disabled) { background: #f3f4f6; }
+.inv-page-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.inv-page-info {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+  min-width: 130px;
+  text-align: center;
+}
+/* ════════════════════════════════════════════════
+   Document.css — responsive additions only
+   Paste these at the bottom of your existing file.
+   ════════════════════════════════════════════════ */
+
+/* ── Tablette (≤ 768 px) ── */
+@media (max-width: 768px) {
+  .inv-pill-tabs {
+    width: 100%;
+  }
+
+  .inv-pill-tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+  }
+
+  .inv-date-wrap {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .inv-filter-trigger {
+    min-width: 0;
+  }
+
+  .inv-filter-panel {
+    width: 100%;
+  }
+
+  .inv-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inv-date-row {
+    padding: 12px 14px;
+  }
+
+  .inv-table th,
+  .inv-table td {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+
+  .inv-pagination {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+}
+
+/* ── Mobile (≤ 480 px) ── */
+@media (max-width: 480px) {
+  .inv-table th,
+  .inv-table td {
+    padding: 9px 10px;
+    font-size: 11px;
+  }
+
+  .inv-page-info {
+    font-size: 12px;
+    min-width: 0;
+  }
+}

@@ -1,0 +1,219 @@
+/* ── Page ── */
+.comp-page {
+  width: 870px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Header — matches Commander .cmd-head style ── */
+.comp-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.comp-head-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Back button — matches .cmd-back-button */
+.comp-back-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #e5e7ef;
+  background: #fff;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: background 0.15s, border-color 0.15s;
+}
+.comp-back-btn:hover {
+  background: #f8fafc;
+  border-color: #d1d5db;
+}
+
+.comp-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.comp-head-title {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.comp-head-sub {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #8a8fa8;
+}
+
+/* Notification bell — matches sd-greeting-bell style */
+.comp-notif-btn {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #e5e7ef;
+  background: #fff;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.comp-notif-btn:hover {
+  background: #f9fafb;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.comp-notif-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 16px;
+  height: 16px;
+  background: #333;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ── Cards list ── */
+.comp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: #fff;
+  border: 1px solid #e5e7ef;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow-x: hidden;
+}
+
+/* ── Single card ── */
+.comp-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.12s;
+}
+.comp-card:last-child {
+  border-bottom: none;
+}
+.comp-card:hover {
+  background: #fafafa;
+}
+
+/* Card header row: number badge + title */
+.comp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Number badge — dark circle matching site's dark buttons */
+.comp-card-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1f2937;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.comp-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* Progress bar — identical to StudentDashboard */
+.comp-progress-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.comp-progress-seg {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: background 0.15s;
+}
+
+.comp-progress-seg--filled {
+  background: #2563eb;
+}
+
+/* Label below progress */
+.comp-card-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #8a8fa8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 940px) {
+  .comp-page { width: 100%; }
+  .comp-head {
+    flex-wrap: wrap;
+  }
+
+  .comp-head-left {
+    min-width: 0;
+  }
+
+  .comp-list {
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .comp-card {
+    padding: 18px 16px;
+  }
+
+  .comp-head-title {
+    font-size: 18px;
+  }
+
+  .comp-card-header {
+    align-items: flex-start;
+  }
+}

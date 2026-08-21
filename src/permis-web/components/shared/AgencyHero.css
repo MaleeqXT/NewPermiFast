@@ -1,0 +1,472 @@
+/* =========================================================
+   AGENCY FINDER SECTION
+   All classes prefixed with agencyfinder-
+========================================================= */
+
+.agencyfinder-section {
+  width: 100%;
+  background: #ffffff;
+  padding: 72px 0 80px;
+  font-family: "Poppins", "Manrope", sans-serif;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.agencyfinder-section--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Inner container ── */
+.agencyfinder-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 42% 58%;
+  gap: 48px;
+  align-items: center;
+}
+
+/* =========================================================
+   LEFT COLUMN
+========================================================= */
+
+/* Green label */
+.agencyfinder-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 20px;
+}
+
+.agencyfinder-label__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #58B526;
+  flex-shrink: 0;
+}
+
+.agencyfinder-label__text {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #58B526;
+  text-transform: uppercase;
+}
+
+/* Heading */
+.agencyfinder-heading {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 18px;
+  padding: 0;
+  line-height: 1.1;
+}
+
+.agencyfinder-heading__dark {
+  font-size: 48px;
+  font-weight: 800;
+  color: #17233D;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+.agencyfinder-heading__green {
+  font-size: 48px;
+  font-weight: 800;
+  color: #58B526;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+}
+
+/* Description */
+.agencyfinder-desc {
+  font-size: 14px;
+  font-weight: 400;
+  color: #5F6673;
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+
+/* ─── Stats cards ─── */
+.agencyfinder-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.agencyfinder-stat {
+  flex: 1;
+  background: #ffffff;
+  border: 1.5px solid #ECECEC;
+  border-radius: 16px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.agencyfinder-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.09);
+}
+
+.agencyfinder-stat__icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.agencyfinder-stat__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.agencyfinder-stat__value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #17233D;
+  line-height: 1.2;
+}
+
+.agencyfinder-stat__label {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #5F6673;
+}
+
+/* ─── Search bar ─── */
+.agencyfinder-search {
+  display: flex;
+  align-items: center;
+  border: 1.5px solid #ECECEC;
+  border-radius: 14px;
+  background: #ffffff;
+  height: 52px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.agencyfinder-search__input-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+}
+
+.agencyfinder-search__pin {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.agencyfinder-search__input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #17233D;
+  background: transparent;
+}
+
+.agencyfinder-search__input::placeholder {
+  color: #9ca3af;
+}
+
+.agencyfinder-search__btn {
+  height: 100%;
+  padding: 0 24px;
+  background: #58B526;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: -2px 0 12px rgba(88, 181, 38, 0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.agencyfinder-search__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: -2px 0 18px rgba(88, 181, 38, 0.38);
+}
+
+/* =========================================================
+   RIGHT COLUMN — MAP
+========================================================= */
+.agencyfinder-map-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.09);
+}
+
+/* ─── Map container ─── */
+.agencyfinder-map-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* The Leaflet map itself — CartoDB Positron tiles are already light,
+   apply a tiny brightness boost to match the very pale screenshot */
+.agencyfinder-map {
+  display: block;
+  width: 100% !important;
+  height: 420px !important;
+  border-radius: 20px;
+}
+
+/* Slightly brighten the tile layer via CSS without over-filtering */
+.agencyfinder-map .leaflet-tile-pane {
+  filter: brightness(1.04) contrast(0.96);
+}
+
+/* ─── Agency marker wrapper ─── */
+.af-marker-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* prevent the wrapper from intercepting map events */
+  pointer-events: none;
+}
+
+/* The circular marker itself */
+.af-marker {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer ring — pulsing */
+.af-marker__ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2.5px solid #58B526;
+  background: rgba(88,181,38,0.10);
+  animation: af-pulse 2.6s ease-in-out infinite;
+}
+
+/* White fill between ring and dot */
+.af-marker__white {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+/* Inner green dot */
+.af-marker__dot {
+  position: relative;
+  z-index: 1;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #58B526;
+}
+
+@keyframes af-pulse {
+  0%, 100% { box-shadow: 0 0 0 0   rgba(88,181,38,0.40); }
+  50%       { box-shadow: 0 0 0 8px rgba(88,181,38,0);    }
+}
+
+/* Floating label beside the marker */
+.af-label {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.13);
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.af-label__name {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #17233D;
+  line-height: 1.2;
+}
+
+.af-label__dept {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #5F6673;
+  line-height: 1;
+}
+
+/* ─── Background city labels ─── */
+.af-city {
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #8a8f9a;
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Floating legend — top-right of map ─── */
+.agencyfinder-legend {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 500;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 10px 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+
+.agencyfinder-legend__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Mini marker in legend */
+.agencyfinder-legend__marker {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agencyfinder-legend__marker--green {
+  border-color: #58B526;
+  background: #fff;
+}
+
+.agencyfinder-legend__marker--green::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #58B526;
+}
+
+.agencyfinder-legend__marker--gray {
+  border-color: #b0b7c3;
+  background: #fff;
+}
+
+.agencyfinder-legend__marker--gray::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #b0b7c3;
+}
+
+.agencyfinder-legend__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #17233D;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   RESPONSIVE — tablet (≤1024px)
+========================================================= */
+@media (max-width: 1024px) {
+  .agencyfinder-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 32px;
+  }
+
+  .agencyfinder-heading__dark,
+  .agencyfinder-heading__green {
+    font-size: 38px;
+  }
+
+  .agencyfinder-map {
+    height: 360px !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile (≤768px)
+========================================================= */
+@media (max-width: 768px) {
+  .agencyfinder-section {
+    padding: 48px 0 56px;
+  }
+
+  .agencyfinder-container {
+    padding: 0 20px;
+    gap: 28px;
+  }
+
+  .agencyfinder-heading__dark,
+  .agencyfinder-heading__green {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .agencyfinder-stats {
+    flex-direction: column;
+  }
+
+  .agencyfinder-map {
+    height: 300px !important;
+  }
+
+  .agencyfinder-search__btn {
+    font-size: 12px;
+    padding: 0 16px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — small mobile (≤480px)
+========================================================= */
+@media (max-width: 480px) {
+  .agencyfinder-heading__dark,
+  .agencyfinder-heading__green {
+    font-size: 24px;
+    letter-spacing: -0.8px;
+  }
+
+  .agencyfinder-map {
+    height: 260px !important;
+  }
+}

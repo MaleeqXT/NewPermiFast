@@ -1,0 +1,80 @@
+/* ProposalDetailDrawer — uses SessionDrawer.css (.sdr-*) classes, minimal customizations here */
+
+/* Close button — blue, matching screenshot */
+.pd-header-close {
+  background: none;
+  border: none;
+  color: #2563eb;            /* blue — matches screenshot exactly */
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  min-width: 52px;
+  transition: color 0.12s;
+}
+.pd-header-close:hover { color: #1d4ed8; }
+
+/* Avatar card — student info */
+.pd-avatar-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Avatar with image or initials */
+.pd-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pd-avatar-info { flex: 1; min-width: 0; }
+
+.pd-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pd-phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 3px;
+}
+
+/* Red cancel button */
+.pd-cancel-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #333;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.pd-cancel-btn:hover:not(:disabled) { background: #222; }
+.pd-cancel-btn:disabled { opacity: 0.7; cursor: not-allowed; }

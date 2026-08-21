@@ -1,0 +1,352 @@
+/* ── Layout ── */
+.ts-layout {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  font-family: 'Inter', 'DM Sans', 'Segoe UI', sans-serif;
+  width: 100%;
+}
+
+/* ══ LEFT SIDEBAR ══════════════════════════════════════════════════════════ */
+.ts-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+}
+
+.ts-sidebar-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Vertical connector line between items */
+.ts-connector {
+  width: 2px;
+  height: 20px;
+  background: #d1d5db;
+  margin-left: 19px; /* aligns with center of the number badge */
+}
+
+/* Each skill row */
+.ts-skill-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background 0.15s;
+  background: transparent;
+}
+
+.ts-skill-item:hover:not(.active) {
+  background: #f3f4f6;
+}
+
+.ts-skill-item.active {
+  background: #333333;
+}
+
+/* Number badge */
+.ts-skill-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+
+.ts-skill-num.active {
+  background: #ffffff;
+  color: #333333;
+}
+
+/* Skill label + tag */
+.ts-skill-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.ts-skill-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+}
+
+.ts-skill-item.active .ts-skill-label {
+  color: #fff;
+}
+
+.ts-skill-tag {
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.ts-skill-item.active .ts-skill-tag {
+  color: rgba(255,255,255,0.75);
+}
+
+/* ══ RIGHT DETAIL PANEL ════════════════════════════════════════════════════ */
+.ts-detail {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Dark progress header ── */
+.ts-progress-header {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px 22px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ts-progress-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ts-progress-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ts-progress-icon {
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ts-progress-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.ts-progress-pct {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Segmented progress bar */
+.ts-progress-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.ts-progress-seg {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #e5e7eb;
+  transition: background 0.2s;
+}
+
+.ts-progress-seg.filled {
+  background: #333333;
+}
+
+.ts-progress-status {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* ── Sub-skills white card ── */
+.ts-subskills-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.ts-subskill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 22px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ts-subskill-row:last-child {
+  border-bottom: none;
+}
+
+.ts-subskill-name {
+  font-size: 14px;
+  font-weight: 400;
+  color: #111827;
+  line-height: 1.4;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Stars group — 3 columns */
+.ts-stars-group {
+  display: flex;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.ts-star-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 60px;
+}
+
+.ts-star-label {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 760px) {
+  .ts-layout {
+    flex-direction: column;
+  }
+  .ts-sidebar {
+    width: 100%;
+  }
+  .ts-stars-group {
+    gap: 12px;
+  }
+  .ts-star-col {
+    min-width: 44px;
+  }
+}
+/* ══════════════════════════════════════════
+   AJOUTS RESPONSIFS — à ajouter à TabSkills.css
+   (remplace/complète le bloc @media existant)
+══════════════════════════════════════════ */
+
+/* ── Tablette (≤ 900px) : réduire la largeur de la sidebar ── */
+@media (max-width: 900px) {
+  .ts-sidebar {
+    width: 200px;
+  }
+  .ts-skill-label {
+    font-size: 12.5px;
+  }
+  .ts-stars-group {
+    gap: 14px;
+  }
+  .ts-star-col {
+    min-width: 50px;
+  }
+}
+
+/* ── Mobile/Tablette (≤ 760px) : déjà géré, on enrichit ── */
+@media (max-width: 760px) {
+  .ts-layout {
+    flex-direction: column;
+  }
+  .ts-sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 0;
+  }
+  /* Masquer les connecteurs verticaux en mode horizontal */
+  .ts-connector {
+    display: none;
+  }
+  .ts-sidebar-item-wrapper {
+    flex-direction: row;
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
+  }
+  .ts-skill-item {
+    width: 100%;
+    padding: 10px 12px;
+  }
+  .ts-skill-label {
+    font-size: 12px;
+  }
+  .ts-skill-tag {
+    font-size: 10.5px;
+  }
+  .ts-stars-group {
+    gap: 12px;
+  }
+  .ts-star-col {
+    min-width: 44px;
+  }
+  .ts-subskill-row {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+}
+
+/* ── Petit mobile (≤ 520px) : sous-compétences empilées ── */
+@media (max-width: 520px) {
+  .ts-sidebar-item-wrapper {
+    flex: 1 1 100%;
+  }
+  .ts-subskill-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 14px;
+  }
+  .ts-stars-group {
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .ts-star-col {
+    min-width: 0;
+    flex: 1;
+    align-items: center;
+  }
+  .ts-subskill-name {
+    font-size: 13px;
+  }
+  .ts-star-label {
+    font-size: 10px;
+  }
+  .ts-progress-title {
+    font-size: 13px;
+  }
+  .ts-progress-header {
+    padding: 14px 16px 12px;
+  }
+}

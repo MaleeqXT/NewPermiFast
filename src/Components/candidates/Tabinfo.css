@@ -1,0 +1,559 @@
+/* ══════════════════════════════════════════════════
+   TabInfo.css  —  Balance card, Password card, Panel
+   ══════════════════════════════════════════════════ */
+
+/* ── Shared input style ── */
+.ti-input-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+.ti-req { color: #ef4444; margin-left: 2px; }
+
+.ti-input {
+  width: 100%;
+  height: 44px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.ti-input:focus { border-color: #2563eb; }
+.ti-input[type="date"] { color: #9ca3af; }
+.ti-input[type="date"]:not(:placeholder-shown) { color: #111827; }
+
+/* ── Balance card ── */
+.ti-balance-card {
+  margin-top: 20px;
+}
+
+.ti-balance-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.ti-input-group { display: flex; flex-direction: column; }
+
+.ti-balance-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.ti-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 80px;
+}
+.ti-stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.3;
+}
+.ti-stat-val {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Modifier button */
+.ti-modifier-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px;
+  border: none;
+  background: none;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+.ti-modifier-btn:hover { background: #eff6ff; }
+
+/* ── Password card ── */
+.ti-password-card { margin-top: 20px; }
+
+.ti-pw-group { position: relative; }
+.ti-pw-wrap { position: relative; }
+.ti-pw-wrap .ti-input { padding-right: 46px; }
+
+.ti-pw-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  color: #9ca3af;
+}
+.ti-pw-toggle:hover { color: #6b7280; }
+
+/* ══════════════════════════════════════════════════
+   Balance Panel (slides in from right)
+   ══════════════════════════════════════════════════ */
+
+.ti-panel-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 500;
+  display: flex;
+  justify-content: flex-end;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.ti-panel {
+  width: 420px;
+  max-width: 95vw;
+  background: #f4f4f0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.25s ease;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.15);
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Panel header */
+.ti-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.ti-panel-back {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.ti-panel-back:hover { background: #f3f4f6; }
+
+.ti-panel-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Panel body */
+.ti-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Product selector */
+.ti-product-selector { position: relative; }
+
+.ti-select-btn {
+  width: 100%;
+  height: 52px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  gap: 8px;
+  transition: border-color 0.15s;
+}
+.ti-select-btn:hover { border-color: #d1d5db; }
+.ti-select-btn--selected { color: #111827; }
+
+.ti-select-clear {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+.ti-select-clear:hover { color: #374151; background: #f3f4f6; }
+
+/* Dropdown */
+.ti-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.ti-dropdown-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+}
+.ti-dropdown-search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  outline: none;
+  font-family: inherit;
+  color: #374151;
+}
+.ti-dropdown-search-input::placeholder { color: #9ca3af; }
+
+.ti-dropdown-list {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.ti-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.1s;
+  border-bottom: 1px solid #f9fafb;
+}
+.ti-dropdown-item:hover { background: #f9fafb; }
+.ti-dropdown-item--active { color: #16a34a; font-weight: 600; background: #f0fdf4; }
+
+.ti-dropdown-empty { padding: 16px; color: #9ca3af; font-size: 14px; text-align: center; }
+
+/* Selected product detail box */
+.ti-product-detail {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+.ti-product-detail-name { font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 6px; }
+.ti-product-detail-sub { font-size: 13px; color: #6b7280; }
+.ti-product-detail-sub strong { color: #111827; }
+
+/* Solde + Operation row */
+.ti-solde-row {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 10px;
+}
+
+.ti-solde-box, .ti-operation-box {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+.ti-solde-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.ti-solde-val {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+}
+.ti-solde-unit { font-size: 14px; font-weight: 500; color: #9ca3af; }
+
+.ti-operation-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+.ti-operation-clear {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 2px 4px;
+  line-height: 1;
+}
+.ti-operation-clear:hover { color: #374151; }
+
+/* Balance list */
+.ti-balance-list-card {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+}
+.ti-balance-list-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+.ti-balance-list-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.12s;
+}
+.ti-balance-list-item:last-child { border-bottom: none; }
+.ti-balance-list-item:hover { background: #f9fafb; padding-left: 6px; }
+.ti-balance-list-item--disabled {
+  cursor: default;
+}
+.ti-balance-list-item--disabled:hover {
+  background: transparent;
+  padding-left: 0;
+}
+
+.ti-balance-list-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+.ti-balance-list-info { flex: 1; min-width: 0; }
+.ti-balance-list-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+  gap: 8px;
+}
+.ti-balance-list-hours {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.ti-balance-list-desc { font-size: 13px; color: #6b7280; line-height: 1.4; }
+
+/* Panel footer */
+.ti-panel-footer {
+  padding: 16px 20px;
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.ti-save-btn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  background: #d1d5db;
+  color: #9ca3af;
+  transition: background 0.2s, color 0.2s;
+}
+.ti-save-btn--active {
+  background: #333;
+  color: #fff;
+}
+.ti-save-btn--active:hover { background: #111827; }
+
+/* ── Action row ── */
+.ti-action-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+}
+
+.ti-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex: 1;
+  height: 42px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  border: none;
+  justify-content: center;
+  transition: all 0.15s;
+  white-space: nowrap;
+  min-width: 140px;
+}
+
+.ti-action-btn--rapport {
+  background: #333;
+  color: #fff;
+}
+.ti-action-btn--rapport:hover {
+  background: #111827;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.ti-action-btn--connect {
+  background: #fff;
+  color: #333;
+  border: 1.5px solid #e5e7eb;
+}
+.ti-action-btn--connect:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Tablet (≤640px) */
+@media (max-width: 640px) {
+
+  /* Balance inputs: stack to single column */
+  .ti-balance-inputs {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  /* Solde row in panel: stack to single column */
+  .ti-solde-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Action buttons: stack vertically */
+  .ti-action-row {
+    flex-direction: column;
+  }
+
+  .ti-action-btn {
+    flex: none;
+    width: 100%;
+  }
+
+  /* Panel header: tighten spacing */
+  .ti-panel-header {
+    padding: 14px 16px;
+  }
+
+  .ti-panel-body {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .ti-panel-footer {
+    padding: 12px 16px;
+  }
+}
+
+/* Mobile (≤400px) */
+@media (max-width: 400px) {
+
+  .ti-balance-list-img {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .ti-balance-list-name {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ti-panel-title {
+    font-size: 14px;
+  }
+
+  .ti-stat-val {
+    font-size: 18px;
+  }
+}

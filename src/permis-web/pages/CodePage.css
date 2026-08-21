@@ -1,0 +1,534 @@
+/* =========================================================
+   CPF PAGE
+   BEM prefix: cpf-
+   Primary green: #69B52D
+========================================================= */
+
+.cpf-page {
+  width: 100%;
+  background: #f8fafc;
+  font-family: "Poppins", sans-serif;
+  min-height: 60vh;
+}
+
+/* ── Container ── */
+.cpf-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 72px 48px 88px;
+  box-sizing: border-box;
+}
+
+/* ── Two-column section ── */
+.cpf-section {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: 44px;
+  align-items: start;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow:
+    0 4px 32px rgba(0, 0, 0, 0.07),
+    0 0  0 1px #eeeeee;
+}
+
+/* Scroll-in base state */
+.cpf-section .cpf-left  { opacity: 0; transform: translateX(-36px); transition: opacity 0.6s ease 0.05s, transform 0.6s ease 0.05s; }
+.cpf-section .cpf-right { opacity: 0; transform: translateX( 36px); transition: opacity 0.6s ease 0.15s, transform 0.6s ease 0.15s; }
+
+/* Visible state */
+.cpf-section--visible .cpf-left,
+.cpf-section--visible .cpf-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================================================
+   LEFT — HERO IMAGE CARD
+========================================================= */
+.cpf-hero-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  box-shadow:
+    0 8px 40px rgba(105, 181, 45, 0.18),
+    0 2px 12px rgba(0, 0, 0, 0.10);
+}
+
+/* Background image */
+.cpf-hero-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Dark gradient overlay — bottom fade */
+.cpf-hero-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.38) 38%,
+    rgba(0, 0, 0, 0)    62%
+  );
+}
+
+/* Bottom content over the image */
+.cpf-hero-card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 26px 30px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Green pill badge */
+.cpf-hero-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(105, 181, 45, 0.18);
+  border: 1px solid rgba(105, 181, 45, 0.45);
+  color: #a3e05a;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 999px;
+  width: fit-content;
+  backdrop-filter: blur(6px);
+}
+
+.cpf-hero-card__badge-icon {
+  font-size: 10px;
+}
+
+/* Heading */
+.cpf-hero-card__heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.cpf-hero-card__heading-green {
+  color: #69B52D;
+}
+
+/* Description */
+.cpf-hero-card__desc {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 320px;
+}
+
+/* =========================================================
+   RIGHT — PRODUCT PANEL
+========================================================= */
+.cpf-right {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 4px 0;
+}
+
+/* ── Shared section label (line + uppercase text) ── */
+.cpf-selector__label,
+.cpf-features__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  color: #6b7280;
+  text-transform: uppercase;
+  margin: 0 0 16px;
+}
+
+.cpf-selector__label-bar,
+.cpf-features__label-bar {
+  display: inline-block;
+  width: 26px;
+  height: 2.5px;
+  background: #69B52D;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Options ── */
+.cpf-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Single option button */
+.cpf-option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1.5px solid #e5e7eb;
+  background: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition:
+    border-color 0.22s ease,
+    box-shadow   0.22s ease,
+    transform    0.18s ease;
+}
+
+.cpf-option:hover {
+  border-color: rgba(105, 181, 45, 0.50);
+  box-shadow: 0 4px 16px rgba(105, 181, 45, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Active state */
+.cpf-option--active {
+  border-color: #69B52D;
+  box-shadow: 0 4px 20px rgba(105, 181, 45, 0.16);
+  background: rgba(105, 181, 45, 0.03);
+}
+
+/* Radio circle */
+.cpf-option__radio {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.cpf-option__radio--active {
+  border-color: #69B52D;
+}
+
+.cpf-option__radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #69B52D;
+}
+
+/* Text block */
+.cpf-option__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cpf-option__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.2;
+}
+
+.cpf-option__price {
+  font-size: 13px;
+  font-weight: 500;
+  color: #69B52D;
+}
+
+/* Checkmark (active only) */
+.cpf-option__check {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #69B52D;
+  color: #fff;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── Features list ── */
+.cpf-features__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.cpf-feature {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f3f4f6;
+
+  /* stagger animation */
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity   0.45s ease calc(var(--fi, 0) * 0.08s + 0.25s),
+    transform 0.45s ease calc(var(--fi, 0) * 0.08s + 0.25s);
+}
+
+.cpf-feature:last-child {
+  border-bottom: none;
+}
+
+.cpf-feature--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Green icon circle */
+.cpf-feature__icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(105, 181, 45, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cpf-feature__icon {
+  font-size: 15px;
+  color: #69B52D;
+}
+
+.cpf-feature__text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.cpf-feature__text strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── Price card ── */
+.cpf-price-card {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 3px 16px rgba(105, 181, 45, 0.18);
+}
+
+/* Left green square */
+.cpf-price-card__icon-wrap {
+  width: 64px;
+  min-height: 64px;
+  background: #69B52D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.cpf-price-card__icon {
+  font-size: 22px;
+  color: #fff;
+}
+
+/* Right price area */
+.cpf-price-card__body {
+  flex: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 18px 22px;
+  background: #f8fdf3;
+  border: 1px solid rgba(105, 181, 45, 0.20);
+  border-left: none;
+  border-radius: 0 14px 14px 0;
+}
+
+.cpf-price-card__amount {
+  font-family: "Poppins", sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: #111827;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.cpf-price-card__ttc {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  align-self: flex-end;
+  padding-bottom: 3px;
+}
+
+/* ── CTA button ── */
+.cpf-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  height: 62px;
+  background: #69B52D;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 6px 22px rgba(105, 181, 45, 0.36);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+.cpf-cta:hover {
+  background: #5DA126;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(105, 181, 45, 0.46);
+}
+
+.cpf-cta:hover .cpf-cta__arrow {
+  transform: translateY(-50%) translateX(3px);
+}
+
+.cpf-cta__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+/* Arrow circle — right side */
+.cpf-cta__arrow {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #fff;
+  transition: transform 0.22s ease;
+}
+
+/* =========================================================
+   RESPONSIVE — tablet (≤1024px)
+========================================================= */
+@media (max-width: 1024px) {
+  .cpf-container {
+    padding: 52px 28px 64px;
+  }
+
+  .cpf-section {
+    gap: 28px;
+    padding: 24px;
+  }
+
+  .cpf-hero-card__heading {
+    font-size: 28px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — tablet stacked (≤860px)
+========================================================= */
+@media (max-width: 860px) {
+  .cpf-section {
+    grid-template-columns: 1fr;
+  }
+
+  .cpf-left {
+    transform: translateY(-24px) !important;
+  }
+
+  .cpf-right {
+    transform: translateY(24px) !important;
+  }
+
+  .cpf-section--visible .cpf-left,
+  .cpf-section--visible .cpf-right {
+    transform: translateY(0) !important;
+  }
+
+  .cpf-hero-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  .cpf-hero-card__heading {
+    font-size: 30px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile (≤600px)
+========================================================= */
+@media (max-width: 600px) {
+  .cpf-container {
+    padding: 32px 14px 48px;
+  }
+
+  .cpf-section {
+    padding: 16px;
+    border-radius: 18px;
+    gap: 20px;
+  }
+
+  .cpf-hero-card {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cpf-hero-card__heading {
+    font-size: 24px;
+  }
+
+  .cpf-hero-card__content {
+    padding: 20px 18px 22px;
+  }
+
+  .cpf-price-card__amount {
+    font-size: 28px;
+  }
+
+  .cpf-cta {
+    height: 54px;
+  }
+
+  .cpf-cta__text {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,651 @@
+/* ── Page shell ─────────────────────────────────────────────────────────── */
+.cp-page {
+  min-height: 100vh;
+  background: #f5f6f8;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #111827;
+  padding: 28px 32px 48px;
+  box-sizing: border-box;
+}
+
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.cp-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.cp-back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.cp-back:hover {
+  color: #111827;
+  background: #e5e7eb;
+}
+
+.cp-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Pill tabs ───────────────────────────────────────────────────────────── */
+.cp-tabs-bar {
+  margin-bottom: 24px;
+}
+
+/*
+  Scroll wrapper: allows the pill to scroll horizontally on small screens
+  without breaking the pill's rounded shape or wrapping tabs onto new lines.
+*/
+.cp-tabs-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.cp-tabs-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.cp-tabs-pill {
+  display: inline-flex;
+  background: #333;
+  border-radius: 50px;
+  padding: 4px;
+  gap: 2px;
+  /* inline-flex keeps the pill tight to its content width —
+     scroll wrapper handles overflow */
+  white-space: nowrap;
+}
+
+.cp-tab-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s;
+}
+
+.cp-tab-btn:hover {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cp-tab-btn.active {
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ── Body layout ─────────────────────────────────────────────────────────── */
+.cp-body {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+/* ── Left: white form card ───────────────────────────────────────────────── */
+.cp-form-card {
+  flex: 1;
+  min-width: 0;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px 26px;
+}
+
+.cp-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 18px;
+}
+
+/* Name display row */
+.cp-name-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.cp-name-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.cp-field-label {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.cp-field-val {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.cp-edit-icon {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 6px;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  margin-bottom: 2px;
+}
+
+.cp-edit-icon:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.cp-divider {
+  border: none;
+  border-top: 1px solid #f3f4f6;
+  margin: 16px 0;
+}
+
+/* Form fields */
+.cp-field-block {
+  margin-bottom: 16px;
+}
+
+.cp-label {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.cp-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 13px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #111827;
+  background: #fafafa;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.cp-input:focus {
+  border-color: #2563eb;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.cp-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* NEPH row */
+.cp-neph-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cp-neph-row .cp-input {
+  flex: 1;
+  min-width: 120px;
+}
+
+.cp-send-btn {
+  background: #6b7280;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: inherit;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.cp-send-btn:hover {
+  background: #4b5563;
+}
+
+/* Save bar */
+.cp-save-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+}
+
+.cp-btn-cancel {
+  background: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  padding: 9px 20px;
+  font-size: 13px;
+  cursor: pointer;
+  color: #6b7280;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+
+.cp-btn-cancel:hover {
+  background: #f9fafb;
+}
+
+.cp-btn-save {
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.cp-btn-save.flash {
+  background: #059669;
+}
+
+.cp-empty {
+  font-size: 13px;
+  color: #9ca3af;
+  padding: 12px 0;
+}
+
+/* ── Right sidebar ───────────────────────────────────────────────────────── */
+.cp-right {
+  width: 250px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 28px;
+  align-self: flex-start;
+  overflow-y: auto;
+}
+
+/* Blue admin card */
+.cp-admin-card {
+  background: linear-gradient(110deg, rgb(66, 169, 253) 0%, rgb(9, 70, 121) 100%);
+  border-radius: 14px;
+  padding: 20px 18px 22px;
+  color: #fff;
+}
+
+.cp-admin-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
+}
+
+.cp-admin-row {
+  margin-bottom: 14px;
+}
+
+.cp-admin-label {
+  display: block;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 3px;
+}
+
+.cp-admin-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  word-break: break-all;
+}
+
+/* White utility cards */
+.cp-right-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.cp-right-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cp-right-label {
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.cp-status-badge {
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 20px;
+}
+
+/* Photo upload card */
+.cp-photo-card {
+  background: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cp-photo-card:hover .cp-photo-overlay {
+  opacity: 1;
+}
+
+.cp-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+}
+
+.cp-photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.cp-photo-initials {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.cp-photo-hint {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.cp-photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  border-radius: 12px;
+}
+
+.cp-photo-overlay span {
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* CPF toggle */
+.cp-toggle {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.cp-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.cp-toggle-track {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 11px;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.cp-toggle-track::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.cp-toggle input:checked + .cp-toggle-track {
+  background: #111827;
+}
+
+.cp-toggle input:checked + .cp-toggle-track::before {
+  transform: translateX(18px);
+}
+
+/* Box type toggle */
+.cp-box-toggle {
+  display: flex;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cp-box-opt {
+  flex: 1;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: #6b7280;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.cp-box-opt.sel {
+  background: #111827;
+  color: #fff;
+}
+
+/* Action buttons */
+.cp-action-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cp-action-modifier {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.cp-action-modifier:hover {
+  background: #e5e7eb;
+}
+
+.cp-action-giveup {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.cp-action-giveup:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.cp-fullwidth-tab {
+  width: 100%;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Tablet (≤860px) — stack sidebar below form */
+@media (max-width: 860px) {
+  .cp-page {
+    padding: 20px 20px 40px;
+  }
+
+  .cp-body {
+    flex-direction: column;
+  }
+
+  .cp-right {
+    width: 100%;
+    position: static;   /* un-stick so it flows naturally below the form */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Admin card spans full width */
+  .cp-admin-card {
+    flex: 1 1 100%;
+  }
+
+  /* Other cards share a row */
+  .cp-right-card {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 200px;
+  }
+
+  /* File manager and action buttons span full width */
+  .cp-action-btn {
+    flex: 1 1 calc(50% - 6px);
+  }
+
+  /* Tab pill: slightly smaller on tablet */
+  .cp-tab-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+}
+
+/* Mobile (≤560px) */
+@media (max-width: 560px) {
+  .cp-page {
+    padding: 14px 14px 32px;
+  }
+
+  .cp-title {
+    font-size: 18px;
+  }
+
+  .cp-form-card {
+    padding: 16px;
+  }
+
+  /* Tabs scroll horizontally — no wrapping, no layout break */
+  .cp-tabs-bar {
+    margin-bottom: 16px;
+  }
+
+  .cp-tab-btn {
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  /* Right sidebar: all cards stack full width */
+  .cp-right-card {
+    flex: 1 1 100%;
+  }
+
+  .cp-action-btn {
+    flex: 1 1 100%;
+  }
+
+  /* Save bar: stack buttons */
+  .cp-save-bar {
+    flex-direction: column;
+  }
+
+  .cp-btn-cancel,
+  .cp-btn-save {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Name row: stack vertically */
+  .cp-name-row {
+    gap: 12px;
+  }
+}

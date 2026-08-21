@@ -1,0 +1,327 @@
+/* ══════════════════════════════════════════════════════
+   SkillDrawer.css  — white / #333 design, matches site
+══════════════════════════════════════════════════════ */
+
+/* ── Backdrop ── */
+.sk-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1200;
+  animation: skFadeIn 0.18s ease;
+}
+@keyframes skFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ── Drawer ── */
+.sk-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 460px;
+  max-width: 96vw;
+  background: #fff;
+  border-left: 1px solid #e5e7eb;
+  z-index: 1201;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
+  animation: skSlideIn 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+@keyframes skSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);   opacity: 1; }
+}
+
+/* ── Header ── */
+.sk-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.sk-header-close {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.12s;
+}
+.sk-header-close:hover { color: #111827; }
+
+.sk-header-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  text-transform: capitalize;
+}
+
+/* ── Summary card (dark, matches comp-card-header style) ── */
+.sk-summary-card {
+  margin: 16px 16px 0;
+  background: #333333;
+  border-radius: 14px;
+  padding: 18px 20px 14px;
+  flex-shrink: 0;
+}
+
+.sk-summary-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.sk-summary-num {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #f59e0b;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sk-summary-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.sk-summary-bar {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 10px;
+}
+
+.sk-summary-seg {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sk-summary-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: capitalize;
+}
+
+/* ── Scrollable body ── */
+.sk-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 0 8px;
+}
+
+/* ── Skill item ── */
+.sk-item {
+  border-bottom: 1px solid #f3f4f6;
+}
+.sk-item:last-child { border-bottom: none; }
+
+.sk-item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px 10px;
+}
+
+.sk-item-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.5;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Star row ── */
+.sk-star-row {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sk-star-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 8px;
+  transition: background 0.12s;
+  min-width: 60px;
+}
+.sk-star-btn:hover { background: #fef3c7; }
+.sk-star-btn--active { background: #fef3c7; }
+
+.sk-star-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.3;
+  max-width: 62px;
+}
+
+/* ── Comment row ── */
+.sk-comment-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px 14px;
+  background: #f9fafb;
+  margin: 0 0 0;
+}
+
+.sk-comment-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.sk-comment-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #111827;
+}
+.sk-comment-input::placeholder { color: #9ca3af; }
+
+/* ── Footer ── */
+.sk-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid #f3f4f6;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.sk-footer-cancel {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 9px 22px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.sk-footer-cancel:hover { background: #f3f4f6; }
+
+.sk-footer-save {
+  background: #333333;
+  border: none;
+  border-radius: 10px;
+  padding: 9px 28px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.sk-footer-save:hover { background: #111827; }
+
+/* ══════════════════════════════════════════════════════
+   SUCCESS MODAL
+══════════════════════════════════════════════════════ */
+.sk-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: skFadeIn 0.16s ease;
+}
+
+.sk-modal {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 32px 28px;
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  animation: skModalIn 0.2s ease;
+}
+@keyframes skModalIn {
+  from { opacity: 0; transform: scale(0.94) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.sk-modal-icon { display: flex; }
+
+.sk-modal-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+}
+
+.sk-modal-body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.sk-modal-btn {
+  background: #333333;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 32px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.12s;
+}
+.sk-modal-btn:hover { background: #111827; }

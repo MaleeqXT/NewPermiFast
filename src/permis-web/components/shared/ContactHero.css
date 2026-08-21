@@ -1,0 +1,398 @@
+/* =========================================================
+   CONTACT CTA SECTION
+   BEM prefix: cta-
+   Brand green: #69B32A
+========================================================= */
+
+/* ── Section wrapper ── */
+.cta {
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  padding: 80px 0 88px;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* ── Soft radial background glows ── */
+.cta__bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cta__bg-glow--left {
+  width: 520px;
+  height: 520px;
+  top: -120px;
+  left: -140px;
+  background: radial-gradient(circle,
+    rgba(105, 179, 42, 0.07) 0%,
+    rgba(105, 179, 42, 0)    70%);
+}
+
+.cta__bg-glow--right {
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -80px;
+  background: radial-gradient(circle,
+    rgba(105, 179, 42, 0.06) 0%,
+    rgba(105, 179, 42, 0)    70%);
+}
+
+/* ── Inner container ── */
+.cta__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 48px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+}
+
+/* ==========================================================
+   LEFT CONTENT
+========================================================== */
+.cta__content {
+  flex: 1;
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Badge ── */
+.cta__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;                         /* bubble overlaps — no gap needed */
+  background: #69B32A;
+  color: #fff;
+  /* right padding = 0 so bubble bleeds out; left padding gives text room */
+  padding: 2px 0 2px 16px;
+  border-radius: 999px;
+  box-shadow:
+    0 6px 28px rgba(105, 179, 42, 0.30),
+    0 2px  8px rgba(105, 179, 42, 0.18);
+  width: fit-content;
+  margin-bottom: 28px;
+  position: relative;
+
+  /* Stagger animation — slides down from above */
+  opacity: 0;
+  transform: translateY(-14px);
+  transition: opacity 0.55s ease 0.05s, transform 0.55s ease 0.05s;
+}
+
+.cta__badge:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 32px rgba(105, 179, 42, 0.40),
+    0 4px  10px rgba(105, 179, 42, 0.22);
+}
+
+.cta__badge-text {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  line-height: 1;
+  /* small right gap before the bubble */
+  padding-right: 10px;
+}
+
+/* Large white circle — sits on the right, slightly overflows vertically */
+.cta__badge-bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #fff;
+  color: #69B32A;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* pull it slightly right so it overlaps the badge edge */
+  margin-right: -2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+/* ── Heading ── */
+.cta__heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0 0 24px;
+
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.62s ease 0.18s, transform 0.62s ease 0.18s;
+}
+
+/* Green word + curved underline */
+.cta__heading-green {
+  color: #69B32A;
+  position: relative;
+  display: inline-block;
+  /* bottom padding so underline has room */
+  padding-bottom: 6px;
+}
+
+/* Hide the unused span */
+.cta__heading-underline {
+  display: none;
+}
+
+/*
+  Curved brush-stroke underline.
+  Uses border-radius to create an arch: flat at the ends, dipping down in the center.
+  border-radius on a short fat element creates the curve:
+  - top corners sharp → bottom corners very round → arch shape pointing downward
+*/
+.cta__heading-green::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: -1px;
+  height: 7px;
+
+  background: #69B32A;
+  opacity: 0.6;
+
+  /* The key: uneven border-radius creates the downward arch */
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) 0.72s;
+}
+
+/* ── Description ── */
+.cta__desc {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0;
+
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s ease 0.34s, transform 0.55s ease 0.34s;
+}
+
+.cta__desc-icon {
+  font-size: 20px;
+  color: #69B32A;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cta__desc span {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 1.65;
+}
+
+.cta__desc-highlight {
+  font-weight: 700;
+  color: #69B32A;
+}
+
+/* ==========================================================
+   RIGHT ILLUSTRATION
+========================================================== */
+.cta__illustration {
+  flex-shrink: 0;
+  position: relative;
+  width: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.65s ease 0.3s, transform 0.65s ease 0.3s;
+}
+
+/* Decorative soft circle behind image */
+.cta__circle {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    rgba(105, 179, 42, 0.12) 0%,
+    rgba(105, 179, 42, 0)    70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  /* Slow pulse */
+  animation: cta-circle-pulse 4s ease-in-out infinite;
+}
+
+@keyframes cta-circle-pulse {
+  0%,  100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1);    }
+  50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.07); }
+}
+
+/* The illustration image */
+.cta__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+
+  /* Floating animation */
+  animation: cta-float 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+.cta__img:hover {
+  transform: scale(1.03);
+  animation-play-state: paused;
+}
+
+@keyframes cta-float {
+  0%,  100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ==========================================================
+   VISIBLE STATE  — triggered by IntersectionObserver
+========================================================== */
+.cta--visible .cta__badge,
+.cta--visible .cta__heading,
+.cta--visible .cta__desc,
+.cta--visible .cta__illustration {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* Underline draws in when visible */
+.cta--visible .cta__heading-green::after {
+  transform: scaleX(1);
+}
+
+/* Green heading glow on hover */
+.cta__heading-green:hover {
+  text-shadow: 0 0 32px rgba(105, 179, 42, 0.35);
+}
+
+/* ==========================================================
+   RESPONSIVE — tablet (≤1024px)
+========================================================== */
+@media (max-width: 1024px) {
+  .cta__container {
+    padding: 0 32px;
+    gap: 36px;
+  }
+
+  .cta__heading {
+    font-size: 44px;
+    letter-spacing: -1px;
+  }
+
+  .cta__illustration {
+    width: 360px;
+  }
+
+  .cta__img {
+    max-width: 360px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — mobile (≤768px) — stacked
+========================================================== */
+@media (max-width: 768px) {
+  .cta {
+    padding: 60px 0 64px;
+  }
+
+  .cta__container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    gap: 40px;
+  }
+
+  .cta__content {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  .cta__badge {
+    margin-bottom: 22px;
+  }
+
+  .cta__heading {
+    font-size: 36px;
+    letter-spacing: -0.8px;
+  }
+
+  .cta__desc {
+    justify-content: center;
+  }
+
+  .cta__illustration {
+    width: 100%;
+    max-width: 360px;
+    transform: translateX(0);
+  }
+
+  .cta__img {
+    max-width: 300px;
+  }
+
+  .cta__circle {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE — small mobile (≤480px)
+========================================================== */
+@media (max-width: 480px) {
+  .cta {
+    padding: 48px 0 52px;
+  }
+
+  .cta__container {
+    padding: 0 18px;
+  }
+
+  .cta__heading {
+    font-size: 30px;
+    letter-spacing: -0.6px;
+  }
+
+  .cta__desc span {
+    font-size: 14.5px;
+  }
+
+  .cta__img {
+    max-width: 260px;
+  }
+}

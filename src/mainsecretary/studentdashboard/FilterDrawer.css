@@ -1,0 +1,244 @@
+.fd-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 12, 27, 0.42);
+  backdrop-filter: blur(2px);
+  z-index: 1100;
+  animation: fdFadeIn 0.18s ease;
+}
+
+@keyframes fdFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fd-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 414px;
+  max-width: 96vw;
+  background: #f8fafc;
+  border-left: 1px solid #dbe4ee;
+  box-shadow: -18px 0 48px rgba(15, 23, 42, 0.16);
+  z-index: 1101;
+  display: flex;
+  flex-direction: column;
+  animation: fdSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fdSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.fd-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 18px 16px;
+  border-bottom: 1px solid #e7edf4;
+  background: #ffffff;
+  flex-shrink: 0;
+}
+
+.fd-header-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.fd-header-link {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3b82f6;
+  transition: opacity 0.12s ease;
+}
+
+.fd-header-link:hover {
+  opacity: 0.75;
+}
+
+.fd-banner {
+  padding: 12px 14px;
+  background: #fff7db;
+  border-bottom: 1px solid #f4e3a6;
+  color: #c27a10;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.fd-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 12px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.fd-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fd-section-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #5b6472;
+}
+
+.fd-zone-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 34px;
+  padding: 0 12px;
+  background: #ffffff;
+  border: 1px solid #e6edf5;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.fd-zone-row--active {
+  box-shadow: inset 3px 0 0 #3b82f6;
+}
+
+.fd-zone-value {
+  flex: 1;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  color: #1f2937;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.fd-zone-check {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.fd-lieu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fd-lieu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 14px;
+  border: 1px solid #e6edf5;
+  background: #ffffff;
+  cursor: pointer;
+  color: #1f2937;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  transition: border-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.fd-lieu-item:hover {
+  border-color: #d6e1ed;
+  box-shadow: 0 6px 18px rgba(148, 163, 184, 0.14);
+}
+
+.fd-lieu-item--active {
+  box-shadow: inset 3px 0 0 #3b82f6;
+}
+
+.fd-lieu-bar {
+  width: 3px;
+  height: 18px;
+  border-radius: 999px;
+  background: transparent;
+  flex-shrink: 0;
+}
+
+.fd-lieu-item--active .fd-lieu-bar {
+  background: #3b82f6;
+}
+
+.fd-lieu-name {
+  flex: 1;
+}
+
+.fd-lieu-check {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: #3b82f6;
+}
+
+.fd-no-lieu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 18px 28px;
+  background: #ffffff;
+  border: 1px solid #e7eef5;
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(148, 163, 184, 0.12);
+}
+
+.fd-no-lieu-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.fd-no-lieu-sub {
+  max-width: 270px;
+  color: #7c8796;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .fd-drawer {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .fd-header,
+  .fd-banner,
+  .fd-body {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .fd-body {
+    gap: 18px;
+  }
+
+  .fd-no-lieu {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .fd-lieu-item {
+    min-height: 40px;
+    flex-wrap: wrap;
+  }
+}

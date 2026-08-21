@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.lp-root {
+  display: flex;
+  min-height: 100vh;
+  background: #0d0d0d;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+/* ── LEFT PANEL ── */
+.lp-left {
+  width: 50%;
+  max-width: 630px;
+  display: flex;
+  flex-direction: column;
+  background: #0d0d0d;
+  padding: 40px 48px 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.lp-inner {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Brand */
+.lp-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 48px;
+}
+
+.lp-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.lp-business {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+/* Heading */
+.lp-heading-block {
+  margin-bottom: 28px;
+}
+
+.lp-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.lp-subtitle {
+  font-size: 14px;
+  color: #9a9a9a;
+  line-height: 1.5;
+}
+
+/* Error Banner */
+.lp-error-banner {
+  background: #4a1212;
+  border: 1px solid #7a2020;
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #f87171;
+  margin-bottom: 20px;
+}
+
+/* Form */
+.lp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.lp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.lp-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #d1d1d1;
+  letter-spacing: 0.01em;
+}
+
+/* Input wrapper */
+.lp-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 8px;
+  padding: 0 14px;
+  height: 50px;
+  transition: border-color 0.2s ease;
+  gap: 10px;
+}
+
+.lp-input-wrap:focus-within {
+  border-color: #555555;
+}
+
+.lp-input-wrap--error {
+  border-color: #7a2020;
+}
+
+.lp-input-wrap--error:focus-within {
+  border-color: #f87171;
+}
+
+.lp-input-icon {
+  display: flex;
+  align-items: center;
+  color: #666666;
+  flex-shrink: 0;
+}
+
+.lp-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  padding: 0;
+}
+
+.lp-input::placeholder {
+  color: #555555;
+}
+
+.lp-input--password {
+  padding-right: 4px;
+}
+
+.lp-eye-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: #666666;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.lp-eye-btn:hover {
+  color: #aaaaaa;
+}
+
+/* Links row */
+.lp-links-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  margin-top: 4px;
+}
+
+.lp-link {
+  font-size: 13px;
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.lp-link:hover {
+  color: #cccccc;
+}
+
+/* Submit button */
+.lp-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 54px;
+  background: linear-gradient(208.74deg, rgb(56, 56, 56) 3.65%, rgb(104, 104, 104) 115.15%);
+  border: 1px solid #4a4a4a;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  letter-spacing: 0.01em;
+}
+
+.lp-submit-btn:hover {
+  opacity: 0.88;
+}
+
+.lp-submit-btn:active {
+  transform: scale(0.99);
+  opacity: 0.8;
+}
+
+/* Footer */
+.lp-footer {
+  margin-top: auto;
+  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.lp-copyright {
+  font-size: 12px;
+  color: #555555;
+}
+
+/* ── RIGHT PANEL ── */
+.lp-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.lp-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .lp-root {
+    flex-direction: column;
+  }
+
+  .lp-left {
+    width: 100%;
+    max-width: 100%;
+    padding: 32px 24px 28px;
+  }
+
+  .lp-right {
+    display: none;
+  }
+
+  .lp-title {
+    font-size: 28px;
+  }
+}

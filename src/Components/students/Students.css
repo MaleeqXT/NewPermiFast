@@ -1,0 +1,472 @@
+/* PermiFast.css */
+
+/* Layout */
+.pf-page {
+  padding: 1.5rem;
+  font-family: sans-serif;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.pf-form-page {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+  font-family: sans-serif;
+}
+
+/* Toolbar */
+.pf-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pf-search-box {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 0 14px;
+  height: 55px;
+  background: #fff;
+}
+
+.pf-search-box input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  background: transparent;
+}
+
+/* Buttons */
+.pf-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0 16px;
+  height: 55px;
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pf-btn1{
+    height: 43px;
+}
+.pf-btn:hover {
+  background: #f5f5f5;
+}
+
+.pf-btn-dark {
+  background: #333;
+  color: #fff;
+  border: none;
+}
+
+.pf-btn-dark:hover {
+  background: #1a1a1a;
+  
+}
+
+/* Filter dropdown */
+.pf-filter-wrapper {
+  position: relative;
+}
+
+.pf-filter-dropdown {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  padding: 10px;
+  min-width: 220px;
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.pf-filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.pf-filter-option:hover {
+  background: #f5f5f5;
+}
+
+.pf-filter-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.pf-filter-divider {
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  margin: 6px 0;
+}
+
+/* Table */
+.pf-table-card {
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.pf-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.pf-table thead tr {
+  background: #f9f9f9;
+}
+
+.pf-table th {
+    font-family: 'Inter',sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  padding: 13px 16px;
+  text-align: left;
+  color: black;
+}
+
+.pf-table td {
+  font-family: 'Inter',sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 13px 16px;
+  color: oklch(0.129 0.042 264.695);
+  vertical-align: middle;
+}
+
+.pf-table tbody tr {
+  border-top: 1px solid #f0f0f0;
+}
+
+.pf-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.pf-empty {
+  text-align: center;
+  padding: 2rem;
+  color: #999;
+  font-size: 14px;
+}
+
+/* Sort button */
+.pf-sort-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 4px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+  vertical-align: middle;
+}
+
+.pf-sort-arrow {
+  
+  line-height: 1;
+  color: #aaa;
+}
+
+.pf-sort-arrow.active {
+  color: #1a1a1a;
+}
+
+/* Table action buttons */
+.pf-dossier-btn {
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.pf-dossier-btn:hover {
+  background: #1a1a1a;
+}
+
+.pf-badge {
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  color: #555;
+}
+
+.pf-icon-blue {
+  color: #4a9eff;
+  font-size: 18px;
+}
+
+/* ── Form Page ── */
+.pf-back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  font-family: 'Inter',sans-serif;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.pf-back-btn:hover {
+  color: #222;
+}
+
+.pf-info-banner {
+  background: #e8f4ff;
+  border-radius: 10px;
+  border: 1px solid #f0e9e9;
+  padding: 12px 16px;
+  font-size: 13px;
+  color: #1a6aa8;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+.banner-text{
+    font-family: 'Inter',sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4F65C3;
+}
+.info-image-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 50px ;
+     width: 110px !important;
+    border-radius: 100% 100% 100% 100%;
+    background-color: #9fd6fe;
+}
+.pf-info-banner img{
+    
+   
+}
+
+.pf-section-card {
+  border: 1px solid #e5e5e5;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.pf-section-title {
+    font-family: 'Inter',sans-serif;
+  font-weight: 600;
+  line-height: 24px;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.pf-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.pf-form-row.full {
+  grid-template-columns: 1fr;
+}
+
+.pf-form-group label {
+  font-family: 'Inter',sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: oklch(0.551 0.027 264.364);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pf-input {
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Inter",sans-serif;
+  outline: none;
+  width: 100%;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.pf-input:focus {
+  border-color: #4a9eff;
+}
+
+.pf-phone-row {
+  display: flex;
+  gap: 6px;
+}
+
+.pf-phone-flag {
+  height: 40px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.pf-radio-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.pf-radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Permis cards */
+.pf-permis-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.pf-permis-card {
+  border: 2px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 18px 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.pf-permis-card:hover {
+  border-color: #bbb;
+}
+
+.pf-permis-card.selected {
+  border-color: #4a9eff;
+  background: #f0f8ff;
+}
+
+.pf-permis-icon {
+  background-color: #F9FAFB;
+  padding: 7px 7px;
+  border-radius: 10px;
+  text-align: center;
+  
+  
+}
+
+.pf-permis-name {
+    font-family: 'Inter',sans-serif;
+    line-height: 20px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.pf-permis-sub {
+  font-weight: 400;
+  font-weight: 400;
+  font-size: 12px;
+  color: oklch(0.446 0.03 256.802);
+}
+
+.pf-permis-card.selected .pf-permis-sub {
+  color: #4a9eff;
+}
+
+/* Error */
+.pf-error {
+  color: red;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+/* Form footer */
+.pf-form-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.pf-btn-cancel {
+  border: 2px solid #e87aa0;
+  color: rgb(227, 36, 121);
+  background: none;
+  border-radius: 999px;
+  padding: 0 108px;
+  height: 56px;
+  font-weight: 600;
+  line-height: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pf-btn-cancel:hover {
+  background: #fdf0f4;
+}
+
+.pf-btn-save {
+  background: #4a9eff;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0 108px;
+  height: 56px;
+    font-weight: 600;
+    line-height: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.pf-btn-save:hover {
+  background: #2a7de0;
+}

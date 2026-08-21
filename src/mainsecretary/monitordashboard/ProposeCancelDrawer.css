@@ -1,0 +1,84 @@
+/* ── PropositionDrawer — only styles NOT already in SessionDrawer.css ──
+
+   We import SessionDrawer.css in the JSX so all .sdr-* classes are available.
+   This file only adds the handful of new elements unique to PropositionDrawer.
+── */
+
+/* ── "Close" link — blue, matching screenshot ── */
+.pd-header-close {
+  background: none;
+  border: none;
+  color: #2563eb;            /* blue — matches screenshot exactly */
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  min-width: 52px;
+  transition: color 0.12s;
+}
+.pd-header-close:hover { color: #1d4ed8; }
+
+/* ── Avatar card — name + phone only (no email) ── */
+.pd-avatar-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Square-ish avatar with light purple bg — matches screenshot "YT" */
+.pd-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #e0e7ff;
+  color: #3730a3;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pd-avatar-info { flex: 1; min-width: 0; }
+
+.pd-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Phone shown below name (no email) */
+.pd-phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 3px;
+}
+
+/* ── Red cancel button at footer ── */
+.pd-cancel-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #333;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.pd-cancel-btn:hover { background: #222; }

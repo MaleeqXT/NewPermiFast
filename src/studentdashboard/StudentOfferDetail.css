@@ -1,0 +1,250 @@
+.sod-page {
+  width: 870px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 24px;
+  font-family: "Inter", sans-serif;
+}
+
+.sod-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sod-hero-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sod-back-btn,
+.sod-bell-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e5e7ef;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.sod-back-btn:hover,
+.sod-bell-btn:hover {
+  background: #f9fafb;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.sod-title {
+  margin: 0;
+  flex: 1;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.sod-bell-btn {
+  position: relative;
+}
+
+.sod-bell-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #333333;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+.sod-header-card,
+.sod-balance-card,
+.sod-details-card {
+  background: #ffffff;
+  border: 1px solid #e5e7ef;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.sod-header-card {
+  padding: 22px 24px;
+}
+
+.sod-order-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #f3e4a7;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sod-offer-name {
+  margin: 14px 0 8px;
+  color: #111827;
+  font-size: 30px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.sod-offer-description {
+  margin: 0;
+  color: #4b5563;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 760px;
+}
+
+.sod-balance-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  padding: 22px 24px;
+  background:
+    radial-gradient(circle at top right, rgba(96, 165, 250, 0.16), transparent 34%),
+    radial-gradient(circle at center, rgba(217, 70, 239, 0.08), transparent 26%),
+    linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.sod-balance-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sod-balance-block--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.sod-balance-label {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sod-balance-value {
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.sod-details-card {
+  padding: 22px 24px;
+}
+
+.sod-section-title {
+  margin: 0 0 16px;
+  color: #111827;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.sod-details-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sod-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 230px) 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid #edf1f6;
+}
+
+.sod-row:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.sod-row-label {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.sod-row-value {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.sod-row-value--paid {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 30px;
+  width: fit-content;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: #dff3e6;
+  color: #166534;
+}
+
+.sod-download-btn {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  border-radius: 14px;
+  background: #333333;
+  color: #ffffff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sod-download-btn:hover {
+  background: #1f2937;
+}
+
+@media (max-width: 800px) {
+  .sod-page {
+    gap: 14px;
+  }
+
+  .sod-balance-card {
+    grid-template-columns: 1fr;
+  }
+
+  .sod-balance-block--right {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .sod-offer-name {
+    font-size: 24px;
+  }
+
+  .sod-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .sod-header-card,
+  .sod-balance-card,
+  .sod-details-card {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

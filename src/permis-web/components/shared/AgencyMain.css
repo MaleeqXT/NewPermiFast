@@ -1,0 +1,655 @@
+/* =========================================================
+   AGENCY DETAILS / MAIN
+   All classes prefixed with agencydetails-
+========================================================= */
+
+.agencydetails-section {
+  width: 100%;
+  background: #f8f9fb;
+  padding: 48px 0 56px;
+  font-family: "Poppins", "Manrope", sans-serif;
+  box-sizing: border-box;
+}
+
+.agencydetails-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   THREE-COLUMN LAYOUT
+========================================================= */
+.agencydetails-layout {
+  display: grid;
+  grid-template-columns: 22% 38% 40%;
+  gap: 0;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   COL 1 — SIDEBAR
+========================================================= */
+.agencydetails-sidebar {
+  border-right: 1px solid #ECECEC;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.agencydetails-sidebar-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: #16233F;
+  text-transform: uppercase;
+  margin: 0 0 16px 4px;
+}
+
+.agencydetails-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+/* ── Agency card ── */
+.agencydetails-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 14px;
+  border: 1.5px solid #ECECEC;
+  background: #ffffff;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+
+.agencydetails-card:hover:not(.agencydetails-card--active) {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+.agencydetails-card--active {
+  border-color: #63B933;
+  box-shadow: 0 2px 14px rgba(99, 185, 51, 0.18);
+}
+
+/* Thumbnail */
+.agencydetails-card-thumb {
+  width: 60px;
+  height: 52px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.agencydetails-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text block */
+.agencydetails-card-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.agencydetails-card-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #16233F;
+  line-height: 1.2;
+}
+
+.agencydetails-card-addr {
+  font-size: 11px;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.4;
+}
+
+.agencydetails-card-status {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #5AC442;
+  line-height: 1.2;
+  margin-top: 3px;
+}
+
+.agencydetails-card-hours {
+  font-size: 11px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.2;
+}
+
+/* Right icon */
+.agencydetails-card-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+
+.agencydetails-card-icon--active {
+  color: #63B933;
+  font-size: 16px;
+}
+
+.agencydetails-card-icon--inactive {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+/* Future openings link */
+.agencydetails-future-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 16px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1.5px solid #ECECEC;
+  background: #ffffff;
+  color: #6B7280;
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  transition: background 0.18s;
+}
+
+.agencydetails-future-btn:hover {
+  background: #f5faf0;
+}
+
+/* =========================================================
+   COL 2 — CENTER IMAGE
+========================================================= */
+.agencydetails-image-col {
+  padding: 20px;
+  display: flex;
+  align-items: stretch;
+  border-right: 1px solid #ECECEC;
+}
+
+.agencydetails-image-wrap {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.09);
+  flex: 1;
+  position: relative;
+}
+
+.agencydetails-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 300px;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.agencydetails-main-img--visible {
+  opacity: 1;
+}
+
+/* =========================================================
+   COL 3 — INFO PANEL
+========================================================= */
+.agencydetails-info-col {
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fade wrapper */
+.agencydetails-info-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.agencydetails-info-card--visible {
+  opacity: 1;
+}
+
+/* ── Top section: name + badge on left, buttons on right ── */
+/* We'll stack them in a two-column sub-grid */
+.agencydetails-info-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto auto 1fr;
+  column-gap: 16px;
+  row-gap: 0;
+}
+
+/* Status badge — col 1 */
+.agencydetails-status-badge {
+  grid-column: 1;
+  grid-row: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.agencydetails-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5AC442;
+  flex-shrink: 0;
+}
+
+.agencydetails-status-text {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  color: #5AC442;
+  text-transform: uppercase;
+}
+
+/* Agency name — col 1 */
+.agencydetails-agency-name {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 32px;
+  font-weight: 800;
+  color: #16233F;
+  margin: 0 0 6px;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+/* Address — col 1 */
+.agencydetails-agency-addr {
+  grid-column: 1;
+  grid-row: 3;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6B7280;
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+/* Rating — col 1 */
+.agencydetails-rating {
+  grid-column: 1;
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.agencydetails-stars {
+  display: flex;
+  gap: 2px;
+  color: #F5B301;
+  font-size: 14px;
+}
+
+.agencydetails-rating-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: #6B7280;
+}
+
+/* Contact info — col 1, row 5 */
+.agencydetails-contacts {
+  grid-column: 1;
+  grid-row: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 16px;
+}
+
+/* Action buttons — col 2, spans rows 1–5 */
+.agencydetails-actions {
+  grid-column: 2;
+  grid-row: 1 / 6;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+  padding-top: 2px;
+  min-width: 168px;
+}
+
+/* ── Buttons ── */
+.agencydetails-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  transition: transform 0.18s, box-shadow 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+
+.agencydetails-btn--primary {
+  background: #63B933;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(99, 185, 51, 0.32);
+}
+
+.agencydetails-btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 185, 51, 0.42);
+}
+
+.agencydetails-btn--secondary {
+  background: #ffffff;
+  color: #63B933;
+  border: 1.5px solid #63B933;
+}
+
+.agencydetails-btn--secondary:hover {
+  background: #f2fbea;
+}
+
+/* ── Contact rows ── */
+.agencydetails-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.agencydetails-contact-row:last-child {
+  border-bottom: none;
+}
+
+.agencydetails-contact-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #edfbe4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #63B933;
+  flex-shrink: 0;
+}
+
+.agencydetails-contact-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.agencydetails-contact-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6B7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.agencydetails-contact-value {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #16233F;
+  line-height: 1.3;
+}
+
+/* =========================================================
+   FEATURE STRIP
+========================================================= */
+.agencydetails-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.agencydetails-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 22px 24px;
+  border-right: 1px solid #ECECEC;
+}
+
+.agencydetails-feature:last-child {
+  border-right: none;
+}
+
+.agencydetails-feature-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #edfbe4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #63B933;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.agencydetails-feature-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #16233F;
+  line-height: 1.2;
+}
+
+.agencydetails-feature-desc {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6B7280;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE — tablet (≤1024px)
+========================================================= */
+@media (max-width: 1024px) {
+  .agencydetails-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .agencydetails-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #ECECEC;
+  }
+
+  .agencydetails-image-col {
+    border-right: none;
+    border-bottom: 1px solid #ECECEC;
+    padding: 16px;
+  }
+
+  .agencydetails-main-img {
+    min-height: 240px;
+  }
+
+  .agencydetails-info-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .agencydetails-agency-name {
+    grid-column: 1;
+    grid-row: auto;
+    font-size: 26px;
+  }
+
+  .agencydetails-status-badge { grid-column: 1; grid-row: auto; }
+  .agencydetails-agency-addr  { grid-column: 1; grid-row: auto; }
+  .agencydetails-rating       { grid-column: 1; grid-row: auto; }
+  .agencydetails-contacts     { grid-column: 1; grid-row: auto; }
+
+  .agencydetails-actions {
+    grid-column: 1;
+    grid-row: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: unset;
+    margin-bottom: 16px;
+  }
+
+  .agencydetails-btn {
+    flex: 1 1 calc(50% - 4px);
+  }
+
+  .agencydetails-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .agencydetails-feature:nth-child(2) { border-right: none; }
+  .agencydetails-feature:nth-child(3) { border-right: 1px solid #ECECEC; }
+  .agencydetails-feature:nth-child(1),
+  .agencydetails-feature:nth-child(2) { border-bottom: 1px solid #ECECEC; }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile (≤768px)
+========================================================= */
+@media (max-width: 768px) {
+  .agencydetails-container {
+    padding: 0 16px;
+  }
+
+  .agencydetails-section {
+    padding: 32px 0 40px;
+  }
+
+  .agencydetails-agency-name {
+    font-size: 22px;
+  }
+
+  .agencydetails-actions {
+    flex-direction: column;
+  }
+
+  .agencydetails-btn {
+    flex: unset;
+    width: 100%;
+  }
+
+  .agencydetails-features {
+    grid-template-columns: 1fr;
+  }
+
+  .agencydetails-feature {
+    border-right: none;
+    border-bottom: 1px solid #ECECEC;
+  }
+
+  .agencydetails-feature:last-child {
+    border-bottom: none;
+  }
+}
+
+/* =========================================================
+   NOS POINTS DE RENDEZ-VOUS
+   Classes prefixed with agencydetails-rdv
+========================================================= */
+
+.agencydetails-rdv {
+  grid-column: 1;
+  grid-row: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  padding-bottom: 4px;
+}
+
+.agencydetails-rdv__label {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #16233F;
+  line-height: 1.2;
+}
+
+.agencydetails-rdv__helper {
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #9ca3af;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+.agencydetails-rdv__textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #16233F;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.agencydetails-rdv__textarea::placeholder {
+  color: #c4c4c4;
+  font-style: italic;
+}
+
+.agencydetails-rdv__textarea:hover {
+  border-color: rgba(99, 185, 51, 0.45);
+}
+
+.agencydetails-rdv__textarea:focus {
+  border-color: #69B32A;
+  box-shadow: 0 0 0 3px rgba(105, 179, 42, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .agencydetails-rdv__textarea {
+    font-size: 14px;
+    padding: 13px 14px;
+    min-height: 80px;
+  }
+}

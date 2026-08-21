@@ -1,0 +1,565 @@
+/* ══ Examination List + Exam Detail ══════════════════════════════════════════ */
+
+/* ── Tabs row (pill + icon btns on right) ── */
+.ex-tabs-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ── Icon buttons (search / filter / sort) ── */
+.ex-icon-btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ex-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.ex-icon-btn:hover { background: #f3f4f6; color: #111827; }
+
+/* ── Filter dropdowns row ── */
+.ex-filters-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.ex-filter-anchor {
+  position: relative;
+}
+
+/* Pill-style filter button matching ord-date-btn */
+.ex-filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-width: 200px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  border-radius: 10px;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ex-filter-btn:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.ex-filter-clear {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #9ca3af;
+}
+.ex-filter-clear:hover { color: #374151; }
+
+/* Dropdown list */
+.ex-filter-dropdown {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 200;
+  min-width: 220px;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 6px;
+}
+
+.ex-filter-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 14px;
+  border: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.1s;
+}
+.ex-filter-option:hover { background: #f3f4f6; }
+.ex-filter-option--active {
+  color: black;
+  font-weight: 600;
+}
+
+/* ── Box badges ── */
+.ex-box-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+.ex-box-badge--auto   { background: #1c1c1e; color: #fff; }
+.ex-box-badge--manuel { background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb; }
+
+/* ── Comment button in table ── */
+.ex-comment-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.1s;
+}
+.ex-comment-btn:hover { background: #f3f4f6; }
+
+/* ── Comment modal overlay ── */
+.ex-comment-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Comment popup — clean card matching screenshot */
+.ex-comment-popup {
+  background: #fff;
+  border-radius: 16px;
+  width: 420px;
+  max-width: 95vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  overflow: hidden;
+  animation: exSlideUp 0.22s ease;
+}
+@keyframes exSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ex-comment-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.ex-comment-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+}
+.ex-comment-x {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.1s;
+}
+.ex-comment-x:hover { background: #f3f4f6; color: #374151; }
+
+.ex-comment-body {
+  padding: 16px 20px;
+}
+.ex-comment-candidate {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+}
+.ex-comment-textarea {
+  width: 100%;
+  height: 100px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.ex-comment-textarea:focus { border-color: #4a9eff; }
+
+.ex-comment-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid #f3f4f6;
+  background: #f9fafb;
+}
+
+/* ══ Exam Detail page ══════════════════════════════════════════════════════════ */
+
+.exd-page {
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.exd-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.exd-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.12s;
+  flex-shrink: 0;
+}
+.exd-back-btn:hover { background: #f3f4f6; }
+
+.exd-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* Two-column layout */
+.exd-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Left — Details card */
+.exd-details-card {
+  flex: 1;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 24px;
+}
+
+.exd-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.exd-field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.exd-field-row:last-child { border-bottom: none; }
+
+.exd-field-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Status toggle buttons (Successful / Failed / On hold) */
+.exd-status-group {
+  display: flex;
+  gap: 6px;
+}
+.exd-status-btn {
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #e5e7eb;
+  background: #f3f4f6;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+.exd-status-btn--successful.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+.exd-status-btn--failed.active     { background: #ef4444; color: #fff; border-color: #ef4444; }
+.exd-status-btn--on_hold.active    { background: #333; color: #fff; border-color: #333; }
+
+/* Result permis toggle */
+.exd-result-group {
+  display: flex;
+  gap: 6px;
+}
+.exd-result-btn {
+  padding: 6px 18px;
+  border-radius: 999px;
+  border: 1.5px solid #e5e7eb;
+  background: #f3f4f6;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+.exd-result-btn--refusal.active  { background: #ef4444; color: #fff; border-color: #ef4444; }
+.exd-result-btn--accepted.active { background: #16a34a; color: #fff; border-color: #16a34a; }
+
+/* Comment textarea */
+.exd-comment-area {
+  width: 100%;
+  min-height: 100px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.exd-comment-area:focus { border-color: #4a9eff; }
+
+/* Footer buttons */
+.exd-footer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.exd-btn-dismiss {
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  border-radius: 999px;
+  padding: 10px 36px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.exd-btn-dismiss:hover { background: #f3f4f6; }
+.exd-btn-save {
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 999px;
+  padding: 10px 36px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.exd-btn-save:hover { background: #444; }
+
+/* Right — Date + Time card */
+.exd-datetime-card {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Date input styled like ord-date-btn */
+.exd-date-field {
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.exd-date-field:focus-within { border-color: #4a9eff; }
+.exd-date-field-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 4px;
+}
+.exd-date-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Scroll-picker card (date or time) */
+.exd-picker-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+.exd-picker-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 1px solid #f3f4f6;
+  background: #f9fafb;
+}
+.exd-picker-close-btn {
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  border-radius: 8px;
+  padding: 7px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+.exd-picker-validate-btn {
+  border: none;
+  background: #1c1c1e;
+  color: #fff;
+  border-radius: 8px;
+  padding: 7px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Scroll column pickers */
+.exd-scroll-pickers {
+  display: flex;
+  height: 220px;
+  overflow: hidden;
+}
+.exd-scroll-col {
+  flex: 1;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.exd-scroll-col::-webkit-scrollbar { display: none; }
+
+.exd-scroll-item {
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #9ca3af;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  border-radius: 10px;
+  margin: 2px 4px;
+  transition: background 0.1s;
+}
+.exd-scroll-item:hover { background: #f3f4f6; color: #374151; }
+.exd-scroll-item--active {
+  background: #1c1c1e;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Divider between hours and minutes */
+.exd-scroll-divider {
+  width: 1px;
+  background: #f3f4f6;
+  margin: 12px 0;
+  flex-shrink: 0;
+}
+
+/* ── Toast (green) ── */
+.ex-toast {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  animation: exToastIn 0.3s ease;
+}
+@keyframes exToastIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ex-toast-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+.ex-toast-close {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0;
+}
+.ex-toast-bottom {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+}

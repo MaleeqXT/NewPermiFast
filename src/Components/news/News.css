@@ -1,0 +1,266 @@
+/* ── Form page wrapper ── */
+.news-form-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Back arrow button */
+.news-back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  width: fit-content;
+  transition: color 0.15s;
+}
+.news-back-btn:hover { color: #111; }
+
+/* White card */
+.news-form-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px 36px 36px;
+}
+
+.news-form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 20px;
+}
+
+.news-form-divider {
+  border: none;
+  border-top: 1px solid #e5e7ef;
+  margin: 0 0 28px;
+}
+
+/* Each field group */
+.news-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.news-field:last-child { margin-bottom: 0; }
+
+.news-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* Input */
+.news-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7ef;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #1a1a2e;
+  outline: none;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.news-input:focus { border-color: #93c5fd; }
+.news-input::placeholder { color: #9ca3af; }
+
+/* Textarea */
+.news-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 16px;
+  border: 1px solid #e5e7ef;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #1a1a2e;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s;
+  box-sizing: border-box;
+}
+.news-textarea:focus { border-color: #93c5fd; }
+.news-textarea::placeholder { color: #9ca3af; }
+
+/* Select dropdown */
+.news-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #e5e7ef;
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  color: #374151;
+  outline: none;
+  background: #fff;
+  appearance: auto;
+  box-sizing: border-box;
+}
+.news-select:focus { border-color: #93c5fd; }
+
+/* ── Image uploader area ── */
+.news-img-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+/* Each uploaded image card */
+.news-img-card {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: grab;
+  flex-shrink: 0;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.news-img-card:active { cursor: grabbing; }
+.news-img-card.news-img-dragging { opacity: 0.4; transform: scale(1.05) rotate(1deg); }
+.news-img-card.news-img-over { box-shadow: 0 0 0 2.5px #6366f1; transform: scale(1.03); }
+
+.news-img-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* X remove on image */
+.news-img-remove {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #111;
+  z-index: 5;
+  transition: background 0.15s;
+}
+.news-img-remove:hover { background: #fff; }
+
+/* Pink dashed "Ajouter une image" — full width, matching screenshot */
+.news-img-add {
+  width: 100%;
+  min-height: 52px;
+  border: 1.5px dashed #f472b6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #ec4899;
+  background: #fff;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.news-img-add:hover { background: #fdf2f8; }
+
+.news-img-add-icon {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ec4899;
+}
+
+.news-img-add-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ec4899;
+}
+
+/* ── Form footer — two full-width buttons side by side ── */
+.news-form-footer {
+  display: flex;
+  gap: 16px;
+}
+
+/* Pink outlined cancel */
+.news-btn-cancel {
+  flex: 1;
+  padding: 14px;
+  border: 1.5px solid #ec4899;
+  background: #fff;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ec4899;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.news-btn-cancel:hover { background: #fdf2f8; }
+
+/* Blue save */
+.news-btn-save {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  background: #93c5fd;
+  border-radius: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.news-btn-save:hover { background: #60a5fa; }
+
+/* ── Add these to your existing News.css ─────────────────────────────────── */
+
+/* Top bar row: back arrow on left, Supprimer on right */
+.news-form-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Red Supprimer button — top right in edit mode */
+.news-btn-delete {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.news-btn-delete:hover { background: #dc2626; }
+
+/* 3-dot menu button in Actions column */
+.news-dots-btn {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  color: #374151;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.news-dots-btn:hover { background: #f3f4f6; }

@@ -1,0 +1,467 @@
+/* ══ Orders Page ══════════════════════════════════════════════════════════════ */
+
+.ord-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.ord-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* ── Date pill button ── */
+.ord-date-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px dashed #d1d5db;
+  background: #fff;
+  border-radius: 999px;
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.ord-date-btn:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+
+.ord-date-btn-clear {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  margin-left: 2px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+.ord-date-btn-clear:hover { color: #374151; }
+
+/* ── Stat cards ── */
+.ord-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 20px;
+}
+
+.ord-stat-card {
+  flex: 1 1 200px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-width: 0;
+}
+
+.ord-stat-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(17,24,39,0.93) 0%, rgba(31,41,55,0.89) 100%);
+}
+
+.ord-stat-body {
+  position: relative;
+  padding: 18px 20px;
+}
+
+.ord-stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ord-stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+}
+
+.ord-stat-pct {
+  background: rgba(255,255,255,0.12);
+  border-radius: 999px;
+  padding: 2px 9px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+}
+.ord-stat-pct--positive { background: rgba(22, 163, 74, 0.3); color: #86efac; }
+.ord-stat-pct--negative { background: rgba(220, 38, 38, 0.3); color: #fca5a5; }
+.ord-stat-pct--neutral { color: #9ca3af; }
+
+.ord-stat-amount {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+/* Shrink amount font on narrow cards */
+@media (max-width: 600px) {
+  .ord-stat-amount { font-size: 20px; }
+}
+
+.ord-stat-sub {
+  font-size: 12px;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.ord-stat-footer {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ord-stat-footer-label {
+  font-size: 13px;
+  color: #9ca3af;
+  font-family: 'Inter', sans-serif;
+}
+
+.ord-stat-footer-count {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+}
+.ord-stat-footer-count--normal { color: #fff; }
+.ord-stat-footer-count--danger { color: #f87171; }
+
+/* ── Tabs + Search row ── */
+.ord-tabs-search-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+/* Search box within the tabs row */
+.ord-search-box {
+  max-width: 320px;
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .ord-tabs-search-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ord-search-box {
+    max-width: 100%;
+  }
+}
+
+/* ── Date picker anchor (relative wrapper) ── */
+.ord-datepicker-anchor {
+  position: relative;
+}
+
+/* ── Date Range Picker dropdown ── */
+.ord-picker-dropdown {
+  position: absolute;
+  top: 54px;
+  right: 0;
+  background: #333;
+  border: 1px solid #374151;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  z-index: 300;
+  padding: 20px 24px;
+  min-width: 700px;
+  font-family: 'Inter', sans-serif;
+}
+
+.ord-picker-dropdown--left {
+  left: 0;
+  right: auto;
+}
+
+/* ── Responsive picker: collapse to single calendar on mobile ── */
+@media (max-width: 768px) {
+  .ord-picker-dropdown {
+    min-width: calc(100vw - 32px);
+    left: 0;
+    right: auto;
+    padding: 16px;
+  }
+  .ord-picker-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .ord-picker-presets {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-right: none;
+    border-bottom: 1px solid #374151;
+    padding-right: 0;
+    padding-bottom: 12px;
+    gap: 6px;
+  }
+  .ord-picker-calendars {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.ord-picker-inner {
+  display: flex;
+  gap: 24px;
+}
+
+.ord-picker-presets {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 130px;
+  border-right: 1px solid #374151;
+  padding-right: 20px;
+}
+
+.ord-picker-preset-btn {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 8px;
+  color: #e5e7eb;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.1s;
+  white-space: nowrap;
+}
+.ord-picker-preset-btn:hover { background: #374151; }
+
+.ord-picker-calendars {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+}
+
+.ord-picker-cal {
+  position: relative;
+  flex: 1;
+}
+
+.ord-picker-nav {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  padding: 4px;
+  top: -2px;
+  line-height: 1;
+  transition: color 0.1s;
+}
+.ord-picker-nav:hover { color: #e5e7eb; }
+.ord-picker-nav--left  { left: 0; }
+.ord-picker-nav--right { right: 0; }
+
+.ord-picker-month-title {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+}
+.ord-picker-month-title span { color: #9ca3af; }
+
+.ord-picker-day-headers {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.ord-picker-day-header {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+  padding: 2px 0;
+}
+
+.ord-picker-day-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.ord-picker-day-btn {
+  width: 100%;
+  aspect-ratio: 1;
+  border: none;
+  border-radius: 50%;
+  font-size: 13px;
+  transition: background 0.1s;
+}
+
+.ord-picker-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #374151;
+}
+
+.ord-picker-footer-label { font-size: 13px; color: #9ca3af; }
+
+.ord-picker-footer-actions { display: flex; gap: 8px; }
+
+.ord-picker-cancel-btn {
+  border: 1px solid #374151;
+  background: none;
+  color: #e5e7eb;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.1s;
+}
+.ord-picker-cancel-btn:hover { background: #374151; }
+
+.ord-picker-confirm-btn {
+  border: none;
+  background: #4a9eff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s;
+}
+.ord-picker-confirm-btn:hover { background: #2a7de0; }
+
+/* ── Under-tabs row ── */
+.ord-under-tabs-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* ── Payment dropdown ── */
+.ord-payment-dropdown {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  z-index: 200;
+  padding: 6px;
+  min-width: 130px;
+}
+
+.ord-payment-option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 9px 14px;
+  border: none;
+  background: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.1s;
+}
+.ord-payment-option:hover { background: #f3f4f6; }
+
+.ord-payment-option--active {
+  background: #f0f8ff;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* ── Status badge ── */
+.ord-status-badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+/* ── Ref link ── */
+.ord-ref-link {
+  color: #4a9eff;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.ord-ref-link:hover { text-decoration: underline; }
+
+/* ── Alt file btn ── */
+.cand-file-btn--alt { background: #333; }
+.cand-file-btn--alt:hover { background: #444; }
+
+/* ── Table horizontal scroll ── */
+.cand-table-card { overflow-x: auto; }
+
+/* ── Responsive: stat cards stack on very small screens ── */
+@media (max-width: 480px) {
+  .ord-stats-row {
+    flex-direction: column;
+  }
+  .ord-stat-card {
+    flex: 1 1 100%;
+  }
+  .ord-date-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  .ord-title {
+    font-size: 20px;
+  }
+}
+
+/* ── Responsive: 2 stat cards per row on tablet ── */
+@media (min-width: 481px) and (max-width: 900px) {
+  .ord-stat-card {
+    flex: 1 1 calc(50% - 1px);
+  }
+}

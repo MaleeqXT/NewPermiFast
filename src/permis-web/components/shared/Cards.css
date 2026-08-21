@@ -1,0 +1,246 @@
+/* =========================================================
+   CARDS SECTION
+========================================================= */
+.cards-section {
+  width: 100%;
+  padding: 80px 40px 90px;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+.cards-header {
+  text-align: center;
+  margin-bottom: 56px;
+
+  /* Animate in */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.cards-header--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* "— POURQUOI NOUS CHOISIR ? —" */
+.cards-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #69b32a;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.cards-header__dash {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #69b32a;
+  border-radius: 2px;
+}
+
+/* Big heading */
+.cards-header__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin: 0 0 4px;
+}
+
+.cards-header__title-green {
+  color: #69b32a;
+}
+
+/* Curvy underline SVG */
+.cards-header__underline {
+  display: block;
+  margin: 0 auto 20px;
+  width: 340px;
+  max-width: 90%;
+}
+
+/* Subtitle */
+.cards-header__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* =========================================================
+   CARD GRID
+========================================================= */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   SINGLE CARD
+========================================================= */
+.card {
+  background: #f9fafb;
+  border-radius: 20px;
+  padding: 28px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+
+  /* Scroll animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.55s ease calc(var(--delay, 0s)),
+              transform 0.55s ease calc(var(--delay, 0s)),
+              box-shadow 0.25s,
+              scale 0.25s;
+}
+
+.card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.09);
+  transform: translateY(0) scale(1.03);
+}
+
+/* ── Heading on left, circle image on right ── */
+.card__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.card__heading {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Circular image ── */
+.card__img-wrap {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* colored glow using the card's accent CSS variable */
+  box-shadow: 0 6px 28px 4px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+.card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Title ── */
+.card__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+
+.card__title-accent {
+  /* color set inline per card */
+}
+
+/* Curvy underline under accent word */
+.card__title-underline {
+  display: block;
+  width: 112px;
+  max-width: 100%;
+  margin-top: 4px;
+}
+
+/* ── Body text ── */
+.card__text {
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+/* =========================================================
+   RESPONSIVE — tablet (≤1024px)
+========================================================= */
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cards-section {
+    padding: 60px 28px 70px;
+  }
+
+  .cards-header__title {
+    font-size: 38px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile (≤640px)
+========================================================= */
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-section {
+    padding: 48px 18px 56px;
+  }
+
+  .cards-header__title {
+    font-size: 30px;
+    letter-spacing: -1px;
+  }
+
+  .cards-header__subtitle {
+    font-size: 13.5px;
+  }
+
+  .cards-header__underline {
+    width: 220px;
+  }
+
+  .card__title {
+    font-size: 18px;
+  }
+}
+
+/* =========================================================
+   BIKE IMAGE OVERRIDE — card 02 only
+   object-fit: contain so the full motorcycle is visible
+========================================================= */
+.card__img--bike {
+  object-fit: contain;
+  object-position: center;
+  width: 88%;
+  height: 88%;
+}

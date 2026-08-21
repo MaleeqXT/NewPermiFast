@@ -1,0 +1,632 @@
+/* =========================================================
+   FOOTER
+   All classes prefixed with footer-
+========================================================= */
+
+.footer-root {
+  width: 100%;
+  background: #ffffff;
+  font-family: "Poppins", "Manrope", sans-serif;
+  padding: 0 0 0;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 48px 32px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   CTA CARD
+========================================================= */
+.footer-cta-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1.5px solid #ECECEC;
+  border-radius: 24px;
+  padding: 36px 48px;
+  margin-bottom: 60px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.07),
+    0 1px  4px rgba(0, 0, 0, 0.04);
+  gap: 32px;
+  transition: box-shadow 0.32s ease;
+}
+
+.footer-cta-card:hover {
+  box-shadow:
+    0 8px 36px rgba(0, 0, 0, 0.10),
+    0 2px  8px rgba(0, 0, 0, 0.05);
+}
+
+.footer-cta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-cta-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: #17233D;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.footer-cta-sub {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #55B126;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.footer-cta-right {
+  flex-shrink: 0;
+}
+
+.footer-cta-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 40px;
+  height: 62px;
+  background: linear-gradient(140deg, #78c830 0%, #5db026 55%, #4a9020 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+
+  /* Layered premium shadow */
+  box-shadow:
+    0  6px 22px rgba(85, 177, 38, 0.38),
+    0  2px  6px rgba(85, 177, 38, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.20);
+
+  transition:
+    transform    0.32s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow   0.32s ease,
+    background   0.22s ease;
+}
+
+/* Glossy top highlight — always visible */
+.footer-cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48%;
+  border-radius: 999px 999px 50% 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(255, 255, 255, 0)    100%
+  );
+  pointer-events: none;
+}
+
+/* Arrow icon wrapper */
+.footer-cta-btn .footer-cta-btn-arrow {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover */
+.footer-cta-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 12px 36px rgba(85, 177, 38, 0.50),
+    0  4px 12px rgba(85, 177, 38, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  background: linear-gradient(140deg, #82d438 0%, #64be2e 55%, #52a024 100%);
+}
+
+.footer-cta-btn:hover .footer-cta-btn-arrow {
+  transform: translateX(5px);
+}
+
+/* Click / active */
+.footer-cta-btn:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow:
+    0  4px 14px rgba(85, 177, 38, 0.32),
+    0  1px  4px rgba(85, 177, 38, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  transition-duration: 0.10s;
+}
+
+/* =========================================================
+   MAIN GRID — 5 columns
+========================================================= */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 220px repeat(4, 1fr);
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+/* =========================================================
+   COLUMN SHARED
+========================================================= */
+.footer-col-heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #17233D;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin: 0 0 18px;
+}
+
+/* =========================================================
+   COL 1 — BRAND
+========================================================= */
+.footer-col--brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-logo {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.footer-slogan {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5E6473;
+  line-height: 1.6;
+  margin: 0 0 16px;
+}
+
+/* Three flag bars */
+.footer-flag {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.footer-flag-bar {
+  display: block;
+  width: 28px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.footer-flag-bar--blue  { background: #002395; }
+.footer-flag-bar--white { background: #DDDDDD; border: 1px solid #ccc; }
+.footer-flag-bar--red   { background: #ED2939; }
+
+/* =========================================================
+   MENU LISTS (cols 2–4)
+========================================================= */
+.footer-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.footer-menu-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #5E6473;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.footer-menu-link:hover {
+  color: #55B126;
+}
+
+/* =========================================================
+   COL 5 — CONTACT
+========================================================= */
+.footer-col--contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.footer-contact-row:last-child {
+  margin-bottom: 0;
+}
+
+.footer-contact-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-contact-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer-contact-main {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #17233D;
+  line-height: 1.2;
+}
+
+.footer-contact-main--sm {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.footer-contact-sub {
+  font-family: "Poppins", sans-serif;
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #5E6473;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: #EEEEEE;
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   BOTTOM BAR
+========================================================= */
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Copyright */
+.footer-copyright {
+  font-family: "Poppins", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #5E6473;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ── Badges center ── */
+.footer-badges {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* CPF badge */
+.footer-badge--cpf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid #17233D;
+  padding: 6px;
+  line-height: 1;
+  text-align: center;
+}
+
+.footer-badge-cpf-eligible {
+  font-size: 7px;
+  font-weight: 700;
+  color: #17233D;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-badge-cpf-main {
+  font-size: 20px;
+  font-weight: 900;
+  color: #17233D;
+  line-height: 1;
+}
+
+.footer-badge-cpf-sub {
+  font-size: 6px;
+  font-weight: 600;
+  color: #5E6473;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+
+/* Qualiopi badge */
+.footer-badge--qualiopi {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1px;
+  border-left: 3px solid #003189;
+  padding-left: 10px;
+}
+
+.footer-badge-qualiopi-title {
+  font-size: 18px;
+  font-weight: 900;
+  color: #003189;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.footer-badge-qualiopi-sub {
+  font-size: 7.5px;
+  font-weight: 700;
+  color: #003189;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.footer-badge-qualiopi-fr {
+  font-size: 6.5px;
+  font-weight: 600;
+  color: #5E6473;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+}
+
+/* Payment badge */
+.footer-badge--payment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.footer-payment-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5E6473;
+  white-space: nowrap;
+}
+
+.footer-payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-pay-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  padding: 0 8px;
+  border: 1.5px solid #ECECEC;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.footer-pay-card--visa {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: #1a1f71;
+  letter-spacing: 1px;
+}
+
+.footer-pay-card--mc {
+  width: 38px;
+  position: relative;
+  overflow: visible;
+}
+
+.footer-mc-circle {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.footer-mc-circle--left {
+  background: #EB001B;
+  left: 2px;
+}
+
+.footer-mc-circle--right {
+  background: #F79E1B;
+  right: 2px;
+  mix-blend-mode: normal;
+  opacity: 0.92;
+}
+
+/* ── Social right ── */
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.footer-social-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #17233D;
+}
+
+.footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1.5px solid #ECECEC;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.footer-social-btn:hover {
+  transform: scale(1.1);
+}
+
+/* =========================================================
+   RESPONSIVE — tablet (≤1024px)
+========================================================= */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+
+  .footer-col--brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-cta-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 28px 32px;
+  }
+
+  .footer-cta-heading {
+    font-size: 26px;
+  }
+
+  .footer-cta-sub {
+    font-size: 17px;
+  }
+
+  .footer-container {
+    padding: 40px 32px 28px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile (≤768px)
+========================================================= */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 32px 20px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer-col--brand {
+    grid-column: auto;
+  }
+
+  .footer-cta-card {
+    padding: 24px 22px;
+  }
+
+  .footer-cta-heading {
+    font-size: 22px;
+  }
+
+  .footer-cta-sub {
+    font-size: 15px;
+  }
+
+  .footer-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-copyright {
+    order: 3;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .footer-badges {
+    order: 1;
+  }
+
+  .footer-social {
+    order: 2;
+    align-items: center;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — small mobile (≤480px)
+========================================================= */
+@media (max-width: 480px) {
+  .footer-cta-heading {
+    font-size: 19px;
+  }
+
+  .footer-cta-sub {
+    font-size: 14px;
+  }
+
+  .footer-cta-btn {
+    font-size: 12.5px;
+    padding: 0 22px;
+    height: 50px;
+  }
+
+  .footer-badges {
+    gap: 16px;
+  }
+}

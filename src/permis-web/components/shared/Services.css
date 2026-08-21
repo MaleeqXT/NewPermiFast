@@ -1,0 +1,605 @@
+/* =========================================================
+   SERVICES SECTION
+   All classes prefixed with svc-
+========================================================= */
+
+.svc-section {
+  width: 100%;
+  background: #f8fafc;
+  padding: 80px 0 96px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Wider container for 3-column grid */
+.svc-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+.svc-heading {
+  text-align: center;
+  margin-bottom: 56px;
+
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.svc-heading--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.svc-heading__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: #69b32a;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.svc-heading__dash {
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #69b32a;
+  border-radius: 2px;
+}
+
+.svc-heading__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 44px;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.12;
+  letter-spacing: -1.2px;
+  margin: 0 0 16px;
+}
+
+.svc-heading__title-green {
+  color: #69b32a;
+}
+
+.svc-heading__subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.75;
+  max-width: 660px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CARD GRID
+   Desktop:  3 columns
+   Laptop:   2 columns  (≤1199px)
+   Tablet:   2 columns  (≤900px)
+   Mobile:   1 column   (≤580px)
+========================================================= */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+.svc-card {
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+  border: 1.5px solid #ebebeb;
+  display: flex;
+  flex-direction: column;
+
+  /* scroll-in animation */
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity  0.6s ease calc(var(--delay, 0s)),
+    transform 0.6s ease calc(var(--delay, 0s)),
+    box-shadow 0.25s ease,
+    scale 0.25s ease;
+}
+
+.svc-card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.svc-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.11);
+  transform: scale(1.02);
+}
+
+/* =========================================================
+   RIBBON  — compact bookmark attached to top-left
+========================================================= */
+.svc-card__ribbon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 18px 9px 14px;
+  /* folded-bookmark shadow effect */
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+  position: relative;
+  width: fit-content;          /* ribbon is only as wide as its content */
+  border-radius: 0 0 10px 0;  /* folded bottom-right corner */
+}
+
+/* The folded/torn bottom-right triangle (CSS-only bookmark fold) */
+.svc-card__ribbon::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 8px 0 0;
+  border-color: rgba(0,0,0,0.28) transparent transparent transparent;
+  filter: drop-shadow(0 1px 1px rgba(0,0,0,0.15));
+}
+
+.svc-card__ribbon-star {
+  font-size: 14px;
+  color: #fff;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svc-card__ribbon-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.svc-card__ribbon-step {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+.svc-card__ribbon-sub {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+/* =========================================================
+   CARD BODY  — left content + right illustration
+========================================================= */
+.svc-card__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  flex: 1;
+}
+
+/* LEFT side */
+.svc-card__left {
+  padding: 20px 20px 20px 22px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 0;
+  background: #ffffff;
+}
+
+/* PASS title block */
+.svc-card__pass {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+/* "PASS" — massive, ultra-bold, condensed */
+.svc-card__pass-main {
+  font-family: "Poppins", sans-serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: #122B5C;
+  letter-spacing: -3.5px;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+/* Service name line — same weight, accent color */
+.svc-card__pass-line2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1;
+  text-transform: uppercase;
+  /* color set inline */
+}
+
+/* Description */
+.svc-card__desc {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.55;
+  margin: 0 0 14px;
+}
+
+/* Price card */
+.svc-card__price-card {
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 12px 16px;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: auto;
+}
+
+.svc-card__price-icon {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.svc-card__price-duration {
+  font-family: "Poppins", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1;
+}
+
+.svc-card__price-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+.svc-card__price-desc {
+  font-family: "Poppins", sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+/* RIGHT side — illustration */
+.svc-card__right {
+  position: relative;
+  z-index: 1;
+  margin-left: -18px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+/* Soft circular bg blob */
+.svc-card__img-bg {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.svc-card__img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* =========================================================
+   FEATURE STRIP
+========================================================= */
+.svc-card__features {
+  display: flex;
+  align-items: stretch;
+  padding: 0 16px;
+  border-top: 1.5px solid #f1f1f1;
+}
+
+.svc-card__feature {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 14px 6px;
+  text-align: center;
+}
+
+.svc-card__feature-icon {
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.svc-card__feature-label {
+  font-family: "Poppins", sans-serif;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: #111827;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
+.svc-card__feature-sub {
+  font-family: "Poppins", sans-serif;
+  font-size: 9px;
+  font-weight: 400;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Vertical divider */
+.svc-card__feature-divider {
+  width: 1px;
+  background: #f1f1f1;
+  align-self: stretch;
+  margin: 12px 0;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   CTA BUTTON
+========================================================= */
+.svc-card__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 18px 12px;
+  padding: 15px 24px;
+  border: none;
+  border-radius: 50px;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  width: calc(100% - 36px);
+  position: relative;
+
+  box-shadow: 0 5px 20px color-mix(in srgb, var(--accent) 36%, transparent);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.2s;
+}
+
+.svc-card__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 9px 28px color-mix(in srgb, var(--accent) 44%, transparent);
+  filter: brightness(1.06);
+}
+
+.svc-card__cta-arrow {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* =========================================================
+   FOOTER TRUST BAR
+========================================================= */
+.svc-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px 16px;
+  flex-wrap: wrap;
+}
+
+.svc-card__footer-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Poppins", sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.svc-card__footer-icon {
+  font-size: 11px;
+}
+
+.svc-card__footer-dot {
+  color: #d1d5db;
+  font-size: 13px;
+}
+
+/* =========================================================
+   RESPONSIVE — laptop (≤1199px) → 2 columns
+========================================================= */
+@media (max-width: 1199px) {
+  .svc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — tablet (≤900px) → 2 columns, body STAYS side by side
+========================================================= */
+@media (max-width: 900px) {
+  .svc-heading__title {
+    font-size: 34px;
+  }
+
+  .svc-container {
+    padding: 0 24px;
+  }
+
+  /* Keep side-by-side — do NOT stack */
+  .svc-card__body {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Image stays on the right — no order change */
+  .svc-card__right {
+    min-height: 200px;
+  }
+
+  .svc-card__left {
+    padding: 16px 14px 16px 18px;
+  }
+
+  .svc-card__pass-main {
+    font-size: 40px;
+  }
+
+  .svc-card__pass-line2 {
+    font-size: 22px;
+  }
+
+  .svc-card__price-value {
+    font-size: 30px;
+  }
+
+  .svc-card__features {
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+
+  .svc-card__feature {
+    flex: 0 0 calc(33.33% - 1px);
+    min-width: 80px;
+  }
+
+  .svc-card__feature-divider {
+    display: none;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE — mobile (≤580px) → 1 column, SAME card design as desktop
+========================================================= */
+@media (max-width: 580px) {
+  .svc-section {
+    padding: 48px 0 56px;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .svc-container {
+    padding: 0 12px;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .svc-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    width: 100%;
+  }
+
+  .svc-heading__title {
+    font-size: 24px;
+    letter-spacing: -0.6px;
+  }
+
+  .svc-heading__subtitle {
+    font-size: 13px;
+  }
+
+  .svc-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Cancel out the ≤900px tablet overrides, which still match at
+     mobile widths too (max-width media queries are cumulative) */
+  .svc-card__right {
+    min-height: 280px;
+  }
+
+  .svc-card__left {
+    padding: 20px 20px 20px 22px;
+  }
+
+  .svc-card__pass-main {
+    font-size: 56px;
+  }
+
+  .svc-card__pass-line2 {
+    font-size: 28px;
+  }
+
+  .svc-card__price-value {
+    font-size: 42px;
+  }
+
+  .svc-card__features {
+    flex-wrap: nowrap;
+    padding: 0 16px;
+  }
+
+  .svc-card__feature {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .svc-card__feature-divider {
+    display: block;
+  }
+
+  .svc-card__feature-label {
+    font-size: 6.5px;
+    letter-spacing: 0.1px;
+  }
+}

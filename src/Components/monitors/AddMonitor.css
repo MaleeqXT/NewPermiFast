@@ -1,0 +1,184 @@
+/* ── Placeholder-label inputs (no visible label, placeholder acts as label) ── */
+.nc-placeholder-input::placeholder {
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ── Euro symbol inputs ── */
+.nc-euro-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.nc-euro-wrap .nc-input {
+  padding-right: 36px;
+}
+.nc-right{
+        position: sticky;
+    top: 28px;
+    align-self: flex-start;
+    overflow-y: auto;
+}
+.nc-euro-symbol {
+  position: absolute;
+  right: 13px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  pointer-events: none;
+}
+
+/* ── Area & Places row ── */
+.nc-area-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.nc-zone-select  { flex: 1; }
+.nc-place-select { flex: 2; }
+.nc-place-select:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.nc-add-place-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.nc-add-place-btn:hover { background: #d1d5db; }
+.nc-add-place-btn:disabled {
+  background: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ── Added places tags ── */
+.nc-places-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+.nc-place-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 4px 10px 4px 12px;
+  font-size: 13px;
+  color: #374151;
+}
+.nc-place-zone {
+  background: #111827;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 10px;
+}
+.nc-place-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  font-size: 12px;
+  padding: 0 2px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+.nc-place-remove:hover { color: #ef4444; }
+/* ════════════════════════════════════════════════
+   AddMonitor.css — responsive additions only
+   Paste these at the bottom of your existing file.
+   ════════════════════════════════════════════════ */
+
+/* ── Tablette (≤ 1024 px) ── */
+@media (max-width: 1024px) {
+  /* Stack left + right panels vertically */
+  .nc-root {
+    flex-direction: column;
+  }
+
+  /* Right sidebar: full width, no longer sticky */
+  .nc-right {
+    position: static;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  /* "Ajouter le moniteur" button spans both columns */
+  .nc-add-btn {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ── Mobile (≤ 640 px) ── */
+@media (max-width: 640px) {
+  /* Two-column grid → single column */
+  .nc-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Right sidebar: single column */
+  .nc-right {
+    grid-template-columns: 1fr;
+  }
+
+  /* Area row: stack zone + place + button */
+  .nc-area-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .nc-zone-select,
+  .nc-place-input {
+    width: 100%;
+    flex: none;
+  }
+  .nc-add-place-btn {
+    width: 100%;
+  }
+}
+
+/* ── Very small mobile (≤ 400 px) ── */
+@media (max-width: 400px) {
+  .nc-card { padding: 14px; }
+}
+
+.cp-action-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+
+.cp-action-giveup {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.cp-action-giveup:hover {
+  background: #fee2e2;
+  border-color: #fca5a5;
+  color: #b91c1c;
+}

@@ -1,0 +1,77 @@
+/* ── Wrapper: two cards side by side ─────────────────────────────────────── */
+.ce-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: #f4f5f7;
+  padding: 4px 0;
+}
+
+/* ── Card ────────────────────────────────────────────────────────────────── */
+.ce-card {
+  background: #ffffff;
+  border: 1px solid #e9eaec;
+  border-radius: 14px;
+  padding: 36px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  transition: box-shadow 0.18s;
+}
+
+.ce-card--link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ce-card:hover {
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.ce-card--link:hover {
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+/* Icon wrapper */
+.ce-icon-wrap {
+  margin-bottom: 6px;
+  opacity: 0.75;
+}
+
+/* Title */
+.ce-card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.4;
+  max-width: 220px;
+}
+
+/* Small dot under contract card */
+.ce-card-dot {
+  font-size: 18px;
+  color: #9ca3af;
+  line-height: 1;
+  margin-top: -4px;
+}
+
+/* Subtitle (evaluation card) */
+.ce-card-sub {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #6b7280;
+  line-height: 1.45;
+  max-width: 200px;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .ce-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

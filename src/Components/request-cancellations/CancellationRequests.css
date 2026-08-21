@@ -1,0 +1,83 @@
+/* ════════════════════════════════════════════════════════════════
+   CancellationRequests.css
+   Follows the same conventions as Billing.css:
+   - "canc-" prefix for classes unique to this page
+   - Inter font, same border-radius, same gray palette
+   ════════════════════════════════════════════════════════════════ */
+
+/* Reservation id shown like a link, same treatment as
+   the "name" cell in Billing.jsx (blue, bold, pointer) */
+.canc-reservation-link {
+  color: #2563eb;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+}
+.canc-reservation-link:hover {
+  text-decoration: underline;
+}
+
+/* Status pill — same shape/padding as Billing's ord-status-badge,
+   just kept local so colors can differ per-status easily */
+.canc-status-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  white-space: nowrap;
+}
+
+/* Actions cell: Approve + Reject sit side by side */
+.canc-actions-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+/* Shared button base look, echoing bil-picker-validate-btn's
+   padding/radius/font but with per-action colors below */
+.canc-approve-btn,
+.canc-reject-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.12s, opacity 0.12s;
+  white-space: nowrap;
+}
+
+.canc-approve-btn { background: #16a34a; }
+.canc-approve-btn:hover:not(:disabled) { background: #15803d; }
+
+.canc-reject-btn { background: #dc2626; }
+.canc-reject-btn:hover:not(:disabled) { background: #b91c1c; }
+
+.canc-approve-btn:disabled,
+.canc-reject-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ════════════════════════════════════════════════════════════════
+   RESPONSIVE — same breakpoints Billing.css uses (900 / 640 / 400)
+   ════════════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .canc-actions-cell {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .canc-approve-btn,
+  .canc-reject-btn {
+    justify-content: center;
+  }
+}

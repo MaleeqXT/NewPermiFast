@@ -1,0 +1,266 @@
+.so-page {
+  width: 870px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-bottom: 24px;
+  font-family: "Inter", sans-serif;
+}
+
+.so-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.so-hero-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.so-back-btn,
+.so-bell-btn,
+.so-arrow-btn {
+  border: 1px solid #e5e7ef;
+  background: #ffffff;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.so-back-btn,
+.so-bell-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+}
+
+.so-back-btn:hover,
+.so-bell-btn:hover,
+.so-arrow-btn:hover {
+  background: #f9fafb;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.so-title-wrap {
+  flex: 1;
+}
+
+.so-title {
+  margin: 0;
+  color: #111827;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.so-subtitle {
+  margin: 3px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.so-bell-btn {
+  position: relative;
+}
+
+.so-bell-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: #333333;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
+.so-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.so-card {
+  background: #ffffff;
+  border: 1px solid #e5e7ef;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.so-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.so-order-id {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.so-arrow-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.so-card-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px dashed #d8deea;
+  margin-top: 12px;
+}
+
+.so-logo-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 1px solid #e5e7ef;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  color: #475569;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.so-logo-box span {
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+}
+
+.so-order-copy {
+  min-width: 0;
+}
+
+.so-order-title {
+  margin: 0;
+  color: #111827;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.so-order-date {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.so-order-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.1fr;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #dbe2ec;
+}
+
+.so-order-cell {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.so-order-cell + .so-order-cell {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.so-order-cell--status {
+  background: #eff3f8;
+  color: #475569;
+}
+
+.so-order-cell--paid {
+  background: #dff3e6;
+  color: #166534;
+}
+
+.so-order-cell--pending {
+  background: #eef2f7;
+  color: #475569;
+}
+
+@media (max-width: 800px) {
+  .so-page {
+    gap: 14px;
+  }
+
+  .so-hero-head {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .so-title-wrap {
+    order: 2;
+    width: calc(100% - 52px);
+  }
+
+  .so-bell-btn {
+    margin-left: auto;
+  }
+
+  .so-card-main {
+    align-items: flex-start;
+  }
+
+  .so-order-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .so-order-cell + .so-order-cell {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .so-order-cell--status {
+    border-top: 1px solid #dbe2ec;
+  }
+
+  .so-card {
+    padding: 14px;
+  }
+
+  .so-order-title {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .so-title-wrap {
+    width: 100%;
+  }
+
+  .so-subtitle {
+    line-height: 1.4;
+  }
+
+  .so-card-main {
+    gap: 12px;
+  }
+}

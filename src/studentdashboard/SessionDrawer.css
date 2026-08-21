@@ -1,0 +1,543 @@
+/* ── Overlay ── */
+.sdr-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 3000;
+}
+
+/* ── Drawer — slides in from right, same as other drawers ── */
+.sdr-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 420px;
+  max-width: 96vw;
+  background: #fff;
+  z-index: 3001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.15);
+  animation: sdrSlideIn 0.25s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes sdrSlideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* ── Header ── */
+.sdr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid #f3f4f6;
+  flex-shrink: 0;
+  background: #fff;
+}
+
+.sdr-header-link {
+  background: none;
+  border: none;
+  color: #3b82f6;        /* green — matches screenshot "Fermer" */
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.12s;
+  min-width: 56px;
+}
+.sdr-header-link:hover { color: #16a34a; }
+
+.sdr-header-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── Scrollable body ── */
+.sdr-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: #f9fafb;
+}
+
+/* ── Section card (white card for séance details) ── */
+.sdr-section-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sdr-section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Green icon circle — matches screenshot */
+.sdr-icon-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sdr-section-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── Past session warning ── */
+.sdr-past-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+  padding-left: 4px;
+}
+
+.sdr-bullet {
+  color: #9ca3af;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ── Detail rows (Date, Heure, Instructeur, Rappel) ── */
+.sdr-detail-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sdr-detail-row {
+  display: grid;
+  grid-template-columns: 20px 90px 16px 1fr;
+  align-items: center;
+  gap: 6px;
+}
+
+.sdr-detail-icon {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+}
+
+.sdr-detail-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.sdr-detail-colon {
+  font-size: 13px;
+  color: #9ca3af;
+  text-align: center;
+}
+
+.sdr-detail-val {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Rappel value is bold blue like screenshot */
+.sdr-detail-val--blue {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+/* ── Section label (plain text before map / offre / commentaires) ── */
+.sdr-section-label-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: -10px; /* pulls next element closer */
+}
+
+/* ── Map section ── */
+.sdr-map-section {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  /* overflow: hidden; */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* Map thumbnail — clickable */
+.sdr-map-thumb {
+  width: 100%;
+  height: 130px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  background: #e8e0d8;
+  transition: opacity 0.12s;
+}
+.sdr-map-thumb:hover { opacity: 0.92; }
+
+/* Subtle hover hint overlay */
+.sdr-map-overlay-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  color: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s;
+  font-family: 'Inter', sans-serif;
+}
+.sdr-map-thumb:hover .sdr-map-overlay-hint {
+  background: rgba(0, 0, 0, 0.12);
+  color: #fff;
+}
+
+/* Location row below map — chevron on right */
+.sdr-location-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 13px 16px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-top: 1px solid #f3f4f6;
+  transition: background 0.12s;
+}
+.sdr-location-row:hover { background: #f9fafb; }
+
+.sdr-location-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+/* ── Offre card ── */
+.sdr-offre-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sdr-offre-icon {
+  width: 44px;
+  height: 44px;
+  background: #f3f4f6;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sdr-offre-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  flex: 1;
+}
+
+/* ── Commentaires card ── */
+.sdr-comment-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.sdr-comment-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.sdr-comment-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #9ca3af;
+  font-style: italic;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.sdr-comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sdr-comment-list .sdr-comment-text {
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #475569;
+  font-style: normal;
+}
+
+/* ── Footer ── */
+.sdr-footer {
+  padding: 16px 22px;
+  border-top: 1px solid #f3f4f6;
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.sdr-cancel-btn {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+.sdr-cancel-btn:hover {
+  background: #fef2f2;
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+
+/* ══════════════════════════════════════════
+   MAP MODAL (screenshot 3)
+══════════════════════════════════════════ */
+.sdr-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: sdrFadeIn 0.18s ease;
+}
+
+@keyframes sdrFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.sdr-modal {
+  background: #fff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  animation: sdrModalIn 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes sdrModalIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* Modal header */
+.sdr-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 20px 14px;
+  background: #f9fafb;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sdr-modal-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+}
+
+.sdr-modal-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.sdr-modal-x:hover { background: #f3f4f6; color: #111827; }
+
+/* Modal map */
+.sdr-modal-map {
+  width: 100%;
+  height: 180px;
+  background: #e8e0d8;
+  overflow: hidden;
+}
+
+/* Location label under map */
+.sdr-modal-loc {
+  padding: 14px 20px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sdr-modal-loc-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.sdr-modal-loc-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Action buttons */
+.sdr-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 20px 20px;
+}
+
+.sdr-modal-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  text-decoration: none;
+  border: none;
+}
+
+/* Dark button — "Ouvrir dans google maps" */
+.sdr-modal-btn--dark {
+  background: #333;
+  color: #fff;
+}
+.sdr-modal-btn--dark:hover { background: #111; }
+
+/* Ghost button — "Copy l'adresse" */
+.sdr-modal-btn--ghost {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+}
+.sdr-modal-btn--ghost:hover { background: #e5e7eb; }
+
+/* Copied state — brief green flash */
+.sdr-modal-btn--copied {
+  /* background: #dcfce7 !important; */
+  /* color: #16a34a !important; */
+  border-color: #bbf7d0 !important;
+}
+
+.sdr-cancel-btn:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+.sdr-cancellation-message {
+  margin-top: 9px;
+  color: #374151;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .sdr-drawer {
+    width: 100vw;
+    max-width: 100vw;
+  }
+
+  .sdr-header,
+  .sdr-body,
+  .sdr-footer,
+  .sdr-modal-header,
+  .sdr-modal-loc,
+  .sdr-modal-actions {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .sdr-body {
+    gap: 14px;
+  }
+
+  .sdr-section-card,
+  .sdr-offre-card,
+  .sdr-comment-card {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .sdr-detail-row {
+    grid-template-columns: 18px 84px 12px 1fr;
+  }
+
+  .sdr-modal {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .sdr-modal-map {
+    height: 160px;
+  }
+
+  .sdr-modal-actions {
+    gap: 8px;
+  }
+}

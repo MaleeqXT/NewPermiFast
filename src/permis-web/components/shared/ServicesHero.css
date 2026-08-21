@@ -1,0 +1,551 @@
+/* =========================================================
+   SERVICES HERO
+   Premium Version
+========================================================= */
+
+/* =========================================================
+   HERO WRAPPER
+========================================================= */
+
+.svchero{
+    position:relative;
+    width:100%;
+    height:460px;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.svchero__bg{
+
+    position:absolute;
+    inset:0;
+
+    background-size:cover;
+    background-position:center 40%;
+    background-repeat:no-repeat;
+
+    z-index:0;
+
+    opacity:0;
+
+    will-change:transform,opacity,filter;
+
+    animation:svcheroPremium 24s linear infinite;
+}
+
+
+/* =========================================================
+   PREMIUM HERO ANIMATION
+========================================================= */
+
+@keyframes svcheroPremium{
+
+    /* Entrance */
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            scale(1.18)
+            translate3d(0,40px,0);
+
+        filter:
+            blur(10px)
+            brightness(.72);
+
+    }
+
+    5%{
+
+        opacity:.55;
+
+        transform:
+            scale(1.12)
+            translate3d(0,18px,0);
+
+        filter:
+            blur(4px)
+            brightness(.88);
+
+    }
+
+    10%{
+
+        opacity:1;
+
+        transform:
+            scale(1.05)
+            translate3d(0,0,0);
+
+        filter:
+            blur(0)
+            brightness(1);
+
+    }
+
+    /* Continuous Motion */
+
+    25%{
+
+        transform:
+            scale(1.07)
+            translate3d(-10px,-6px,0);
+
+    }
+
+    45%{
+
+        transform:
+            scale(1.09)
+            translate3d(10px,-2px,0);
+
+    }
+
+    65%{
+
+        transform:
+            scale(1.10)
+            translate3d(5px,8px,0);
+
+    }
+
+    82%{
+
+        transform:
+            scale(1.08)
+            translate3d(-8px,6px,0);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+            scale(1.05)
+            translate3d(0,0,0);
+
+        filter:
+            blur(0)
+            brightness(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   PREMIUM OVERLAY
+========================================================= */
+
+.svchero__overlay{
+
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            110deg,
+            rgba(0,0,0,.75),
+            rgba(0,0,0,.58),
+            rgba(0,0,0,.48)
+        );
+
+    opacity:0;
+
+    animation:
+        overlayReveal 1.2s ease forwards,
+        overlayPulse 8s ease-in-out infinite 2s;
+
+}
+
+
+@keyframes overlayReveal{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+@keyframes overlayPulse{
+
+    0%,
+    100%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        opacity:.93;
+
+    }
+
+}
+
+
+/* =========================================================
+   LIGHT SWEEP
+========================================================= */
+
+.svchero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-20%;
+
+    pointer-events:none;
+
+    z-index:2;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255,255,255,.22) 50%,
+            transparent 65%
+        );
+
+    transform:
+        translateX(-180%)
+        skewX(-25deg);
+
+    animation:
+        heroLightSweep
+        2.2s
+        cubic-bezier(.22,1,.36,1)
+        .7s
+        forwards;
+
+}
+
+
+@keyframes heroLightSweep{
+
+    from{
+
+        transform:
+            translateX(-180%)
+            skewX(-25deg);
+
+    }
+
+    to{
+
+        transform:
+            translateX(220%)
+            skewX(-25deg);
+
+    }
+
+}
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.svchero__content{
+
+    position:relative;
+    z-index:3;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    gap:14px;
+
+    padding:0 24px;
+
+    animation:contentFloat 7s ease-in-out infinite;
+
+}
+
+
+@keyframes contentFloat{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-5px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.svchero__eyebrow{
+
+    font-family:"Poppins",sans-serif;
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    color:#69B32A;
+
+    opacity:0;
+
+    animation:heroText .7s .35s forwards;
+
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.svchero__heading{
+
+    margin:0;
+
+    font-family:"Poppins",sans-serif;
+    font-size:58px;
+    font-weight:800;
+
+    letter-spacing:-1.5px;
+    line-height:1.05;
+
+    color:#ffffff;
+
+    opacity:0;
+
+    animation:heroText .9s .55s forwards;
+
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.svchero__breadcrumb{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    opacity:0;
+
+    animation:heroText .8s .75s forwards;
+
+}
+
+.svchero__breadcrumb-link{
+
+    font-family:"Poppins",sans-serif;
+    font-size:13.5px;
+    font-weight:500;
+
+    color:rgba(255,255,255,.75);
+
+    text-decoration:none;
+
+    transition:.25s;
+
+}
+
+.svchero__breadcrumb-link:hover{
+
+    color:#fff;
+
+}
+
+.svchero__breadcrumb-sep{
+
+    color:rgba(255,255,255,.45);
+
+    user-select:none;
+
+}
+
+.svchero__breadcrumb-current{
+
+    font-family:"Poppins",sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+
+    color:#69B32A;
+
+}
+
+
+/* =========================================================
+   TEXT ANIMATION
+========================================================= */
+
+@keyframes heroText{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(35px)
+            scale(.98);
+
+        filter:blur(4px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:blur(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width:1024px){
+
+    .svchero{
+
+        height:400px;
+
+    }
+
+    .svchero__heading{
+
+        font-size:46px;
+        letter-spacing:-1px;
+
+    }
+
+    .svchero__bg{
+
+        background-position:60% 40%;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width:768px){
+
+    .svchero{
+
+        height:360px;
+
+    }
+
+    .svchero__heading{
+
+        font-size:36px;
+        letter-spacing:-.8px;
+
+    }
+
+    .svchero__eyebrow{
+
+        font-size:10px;
+        letter-spacing:2.5px;
+
+    }
+
+    .svchero__breadcrumb-link,
+    .svchero__breadcrumb-current{
+
+        font-size:12.5px;
+
+    }
+
+    .svchero__bg{
+
+        background-position:65% 40%;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width:480px){
+
+    .svchero{
+
+        height:340px;
+
+    }
+
+    .svchero__heading{
+
+        font-size:30px;
+        letter-spacing:-.5px;
+
+    }
+
+    .svchero__eyebrow{
+
+        font-size:9px;
+        letter-spacing:2px;
+
+    }
+
+    .svchero__bg{
+
+        background-position:68% center;
+
+    }
+
+}

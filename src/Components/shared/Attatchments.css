@@ -1,0 +1,402 @@
+/* ── Page shell ── */
+.tb-attach-page {
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #111827;
+  width: 100%;
+}
+
+/* ── Header ── */
+.tb-attach-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.tb-attach-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ── Pill tab toggle ── */
+.tb-attach-tabs {
+  margin-bottom: 20px;
+}
+
+.tb-attach-pill {
+  display: inline-flex;
+  background: #333;
+  border-radius: 50px;
+  padding: 4px;
+  gap: 2px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tb-attach-tab {
+  flex: 1;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  background: none;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s;
+  text-align: center;
+}
+.tb-attach-tab:hover { color: rgba(255, 255, 255, 0.85); }
+.tb-attach-tab.active {
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ── Body ── */
+.tb-attach-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Document card ── */
+.tb-doc-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tb-doc-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.tb-doc-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.tb-doc-subtitle {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.tb-doc-bullets {
+  margin: 8px 0 0 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.tb-doc-bullets li {
+  font-size: 14px;
+  color: #111827;
+  line-height: 1.5;
+}
+
+/* ── Add a document button ── */
+.tb-add-doc-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2563eb;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  white-space: nowrap;
+  padding: 4px 0;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+.tb-add-doc-btn:hover { color: #1d4ed8; }
+
+/* ── Empty state area ── */
+.tb-doc-empty-area {
+  background: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 10px;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.tb-doc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.tb-doc-empty-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+}
+.tb-doc-empty-sub {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+/* ── Uploaded files list ── */
+.tb-doc-files {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tb-doc-file-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #374151;
+}
+.tb-doc-file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/* ── Footer buttons ── */
+.tb-attach-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.tb-dismiss-btn {
+  padding: 10px 28px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, border-color 0.15s;
+}
+.tb-dismiss-btn:hover { background: #f3f4f6; border-color: #d1d5db; }
+
+.tb-save-docs-btn {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.tb-save-docs-btn:hover { background: #5aa336; }
+
+/* ══ PROFESSIONAL TAB ════════════════════════════════════════════════════ */
+
+/* 2-column grid for form fields */
+.tb-prof-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.tb-prof-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Plain text input (Company name, place, Teaching auth number) */
+.tb-prof-input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.tb-prof-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.08);
+}
+.tb-prof-input::placeholder { color: #9ca3af; }
+
+/* Date field — label floats above the date input inside the box */
+.tb-prof-date-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 14px 10px;
+  cursor: pointer;
+}
+.tb-prof-date-label {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  line-height: 1;
+}
+.tb-prof-date-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+}
+.tb-prof-date-input::-webkit-calendar-picker-indicator {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+/* Downloaded document(s) label */
+.tb-downloaded-section {
+  display: flex;
+  flex-direction: column;
+}
+.tb-downloaded-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .tb-attach-tab { padding: 8px 12px; font-size: 12px; }
+  .tb-attach-footer { flex-direction: column; }
+  .tb-dismiss-btn, .tb-save-docs-btn { width: 100%; text-align: center; }
+  .tb-prof-grid { grid-template-columns: 1fr; }
+}
+/* ══════════════════════════════════════════════════════════════
+   Attatchments.css — Responsive additions
+   Replace the existing @media block at the bottom of
+   Attatchments.css with this — it covers all breakpoints
+══════════════════════════════════════════════════════════════ */
+
+/* ── Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+
+  .tb-attach-page {
+    padding: 0 2px;
+  }
+
+  /* ── Card header: stack "Add" button below title on small cards ── */
+  .tb-doc-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tb-add-doc-btn {
+    align-self: flex-start;
+  }
+
+  /* ── Form grid: single column ── */
+  .tb-prof-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ── Footer buttons: stack vertically ── */
+  .tb-attach-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .tb-dismiss-btn,
+  .tb-save-docs-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ── Mobile (≤ 600px) ── */
+@media (max-width: 600px) {
+
+  /* ── Tabs pill: allow text to wrap on very small screens ── */
+  .tb-attach-tab {
+    padding: 8px 10px;
+    font-size: 12px;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  /* ── Cards: reduce padding ── */
+  .tb-doc-card {
+    padding: 14px 14px;
+  }
+
+  /* ── Empty state area: reduce height ── */
+  .tb-doc-empty-area {
+    min-height: 120px;
+    padding: 16px;
+  }
+
+  /* ── Title: slightly smaller ── */
+  .tb-attach-title {
+    font-size: 18px;
+  }
+
+  .tb-doc-title {
+    font-size: 14px;
+  }
+
+  /* ── Bullet list: smaller text ── */
+  .tb-doc-bullets li {
+    font-size: 13px;
+  }
+}
+
+/* ── Very small (≤ 380px) ── */
+@media (max-width: 380px) {
+
+  .tb-attach-pill {
+    flex-direction: column;
+    border-radius: 14px;
+  }
+
+  .tb-attach-tab {
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  .tb-attach-tab.active {
+    border-radius: 10px;
+  }
+}

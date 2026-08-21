@@ -1,0 +1,236 @@
+/* ── ProposeSession — white/#333 design system ───────────────────────────────
+   Candidate card sits above MonitorSessions calendar.
+   No dark backgrounds — matches the rest of the admin dashboard.
+─────────────────────────────────────────────────────────────────────────────── */
+
+.ps-root {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+}
+
+.ps-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  min-height: 100%;
+}
+
+.ps-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.ps-page-copy h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.ps-page-copy p {
+  margin: 6px 0 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.ps-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #111827;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.ps-back-button:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+  transform: translateY(-1px);
+}
+
+/* ── Candidate card ── */
+.ps-candidate-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Identity row */
+.ps-identity-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.ps-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.ps-identity-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ps-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+}
+
+.ps-email {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 2px;
+  font-family: 'Inter', sans-serif;
+}
+
+.ps-phone-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.12s;
+  flex-shrink: 0;
+}
+.ps-phone-btn:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* Progress section */
+.ps-progress-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ps-progress-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ps-progress-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+}
+
+.ps-progress-pct {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Segmented bar — same pattern as sd-progress-bar */
+.ps-progress-bar {
+  display: flex;
+  gap: 4px;
+}
+
+.ps-progress-seg {
+  flex: 1;
+  height: 8px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  transition: background 0.15s;
+}
+
+.ps-progress-seg--filled {
+  background: #333333;
+}
+
+/* Stats grid — 4 columns */
+.ps-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.ps-stat-box {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-top: 3px solid;            /* accent color applied inline */
+  border-radius: 10px;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.ps-stat-num {
+  font-size: 22px;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+}
+
+.ps-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .ps-page-header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+  }
+
+  .ps-page-copy h1 {
+    font-size: 24px;
+  }
+
+  .ps-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,326 @@
+.bi-page {
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+}
+
+.bi-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.bi-back-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  color: #374151;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.12s;
+}
+.bi-back-btn:hover { background: #f3f4f6; }
+
+.bi-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+/* ── Two-column layout: main content + right sidebar ── */
+.bi-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Stat banner ── */
+.bi-stat-banner {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.bi-stat-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50);
+  z-index: 0;
+  border-radius: 14px;
+}
+
+.bi-stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.bi-stat-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+}
+
+.bi-stat-value {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -1px;
+}
+
+.bi-stat-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 -12px;
+  position: relative;
+  z-index: 1;
+}
+
+.bi-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+/* ── Offer card ── */
+.bi-offer-card {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  align-items: start;
+}
+
+.bi-offer-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bi-offer-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+  font-family: 'Inter', sans-serif;
+}
+
+.bi-offer-desc {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.bi-offer-stats {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  border-left: 1px solid #f3f4f6;
+  padding-left: 20px;
+}
+
+.bi-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-family: 'Inter', sans-serif;
+}
+.bi-stat-row:last-child { border-bottom: none; }
+
+.bi-stat-row-label {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.bi-stat-row-value {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ── Right side cards ── */
+.bi-side-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.bi-side-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.bi-side-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bi-side-label {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+.bi-side-value {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  word-break: break-word;
+}
+
+.bi-cart-id {
+  font-size: 12px;
+  color: #374151;
+  font-family: 'Courier New', monospace;
+  word-break: break-all;
+  line-height: 1.5;
+}
+
+/* ── Customer banner ── */
+.bi-customer-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 12px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.bi-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.50);
+  z-index: 0;
+}
+
+.bi-customer-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  flex-shrink: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.bi-customer-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ══ Responsive ══════════════════════════════════════════════════════════════ */
+
+/* Tablet: sidebar drops below main content, sidebar goes full width */
+@media (max-width: 900px) {
+  .bi-layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Offer card: image + text stack, stats move below */
+  .bi-offer-card {
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .bi-offer-stats {
+    grid-column: 1 / -1;   /* span full width */
+    border-left: none;
+    border-top: 1px solid #f3f4f6;
+    padding-left: 0;
+    padding-top: 16px;
+    min-width: unset;
+  }
+}
+
+/* Mobile: tighter padding, smaller banner text */
+@media (max-width: 540px) {
+  .bi-page {
+    padding: 1rem;
+  }
+
+  .bi-title {
+    font-size: 18px;
+  }
+
+  .bi-stat-banner {
+    padding: 20px 18px;
+  }
+
+  .bi-stat-value {
+    font-size: 28px;
+  }
+
+  /* Offer card: fully single-column on mobile */
+  .bi-offer-card {
+    grid-template-columns: 1fr;
+  }
+
+  .bi-offer-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .bi-offer-stats {
+    grid-column: 1;
+  }
+
+  /* Stat row labels and values wrap nicely */
+  .bi-stat-row {
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+}

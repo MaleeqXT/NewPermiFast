@@ -1,0 +1,151 @@
+/* ══════════════════════════════════════════
+   OVERLAY
+══════════════════════════════════════════ */
+.efm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: efmFadeIn 0.18s ease;
+}
+@keyframes efmFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ══════════════════════════════════════════
+   MODAL BOX
+══════════════════════════════════════════ */
+.efm-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  animation: efmSlideUp 0.2s ease;
+  overflow: hidden;
+}
+@keyframes efmSlideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
+.efm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+}
+.efm-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+}
+.efm-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  color: #6b7280;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+  flex-shrink: 0;
+}
+.efm-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ══════════════════════════════════════════
+   BODY — fields
+══════════════════════════════════════════ */
+.efm-body {
+  padding: 0 24px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.efm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.efm-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  font-family: 'Inter', sans-serif;
+}
+.efm-input {
+  height: 48px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 0 14px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  outline: none;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.efm-input:focus {
+  border-color: #6b7280;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+.efm-input::placeholder {
+  color: #9ca3af;
+}
+
+/* ══════════════════════════════════════════
+   FOOTER — buttons
+══════════════════════════════════════════ */
+.efm-footer {
+  display: flex;
+  gap: 12px;
+  padding: 20px 24px 24px;
+}
+.efm-btn {
+  flex: 1;
+  height: 48px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  transition: background 0.12s, border-color 0.12s;
+  border: 1.5px solid transparent;
+}
+.efm-btn--cancel {
+  background: #fff;
+  color: #374151;
+  border-color: #e5e7eb;
+}
+.efm-btn--cancel:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+.efm-btn--save {
+  background: #333;
+  color: #fff;
+
+}
+.efm-btn--save:hover {
+  background: #444;
+  
+}
